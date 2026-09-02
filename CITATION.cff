@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated article and archived release."
+title: "Contrail structural benchmark: segmentation and physical audits"
+type: software
+version: 0.2.0
+date-released: 2026-09-02
+abstract: "Recovered MaxViT-U-Net training, inference and physical/statistical audit code for a 30-m contrail structural benchmark."
+keywords:
+  - contrails
+  - thermal infrared
+  - semantic segmentation
+  - geostationary satellite
+  - remote sensing
+authors:
+  - family-names: Yu
+    given-names: Jianing
+license: MIT
+repository-code: "https://github.com/jianingyu777/contrail-structural-benchmark"
+url: "https://github.com/jianingyu777/contrail-structural-benchmark"

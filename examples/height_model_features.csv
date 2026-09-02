@@ -1,0 +1,2 @@
+structure_id,image_id,profile_lon,profile_lat,dt_min,mode_c,mode_bg,BT1_c_med,BT2_c_med,BT3_c_med,BT1_bg_med,BT2_bg_med,BT3_bg_med,BTD32_c_med,BTD32_bg_med,dBT2_med,dBTD32_med,area_px,length_px,width_px,aspect
+structure_001,synthetic_height_example,120.0,35.0,0.4,raw,raw,235.0,232.0,231.0,240.0,239.0,238.0,-1.0,-1.0,-7.0,0.0,500.0,100.0,5.0,0.05

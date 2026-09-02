@@ -1,0 +1,11 @@
+The MIT licence applies to source code and software documentation in this
+repository. It does not grant rights to third-party or provider-controlled
+observational data.
+
+The bundled lookup table and serialized height-prior regressors are
+author-generated frozen research artifacts distributed with this software
+release. This distribution does not grant rights to the observational data
+used to calibrate or evaluate those artifacts.
+
+Serialized PyTorch and joblib files can execute code when loaded. Use only
+trusted release artifacts after verifying their SHA-256 digests.
