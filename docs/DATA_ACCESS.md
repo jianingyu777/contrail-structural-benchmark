@@ -10,8 +10,8 @@
 
 ## Not redistributed here
 
-- provider-controlled SDGSAT-1 source imagery;
-- the internal 16-bit provenance mirror;
+- original SDGSAT-1 full-scene imagery, whose distribution is subject to
+  authorization by the data provider;
 - raw ABI, SEVIRI or ERA5 source products;
 - raw third-party ADS-B archives;
 - the enhanced 8-bit patch corpus;
@@ -20,8 +20,9 @@
 The segmentation checkpoint should be attached to a versioned GitHub release
 or deposited in a DOI-bearing archive. The 30-m segmentation dataset is not
 bundled with this software. Its DOI will be made publicly available after
-acceptance of the associated article. Provider-controlled source imagery and
-the internal 16-bit provenance mirror remain outside this software release.
+acceptance of the associated article. Distribution of the original SDGSAT-1
+full-scene imagery is subject to authorization by the data provider and is not
+granted by this software release.
 
 ## Metadata still to complete before public deposit
 

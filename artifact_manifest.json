@@ -20,8 +20,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 711,
-      "sha256": "596f32d904dccc2b0aab21288d3ad3cece47f83d89853e60a8a2aff38e37bb12"
+      "bytes": 740,
+      "sha256": "388cb2216858999a5b715b8dc877627dc0e04995ef4e94e5bbeae33acbfe865f"
     },
     {
       "path": "LICENSE",
@@ -35,8 +35,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10704,
-      "sha256": "83632a0420a0d74cea78d9aa128e5e35468757dfe4562cc55ffd42a04b5a5941"
+      "bytes": 11062,
+      "sha256": "5a17365434c619b4a1a368d4cb6d74c14faa8d6c00731bfb7b55ead34247dee8"
     },
     {
       "path": "configs/physical_audit_paper.json",
@@ -50,8 +50,8 @@
     },
     {
       "path": "docs/DATA_ACCESS.md",
-      "bytes": 1340,
-      "sha256": "429dc3983fd8a09ce2a6f92dd549af20213e86358b2b0df4e15a9552c289afd0"
+      "bytes": 1399,
+      "sha256": "7f75b21fd5d979afb6a4f30f5f01952e8d7ca12d43f71166bf62cb3f7d885635"
     },
     {
       "path": "docs/DATA_FORMATS.md",

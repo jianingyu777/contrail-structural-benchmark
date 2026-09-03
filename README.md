@@ -1,4 +1,13 @@
-# Contrail structural benchmark code
+# A 30-m structural benchmark for task-aligned evaluation of geostationary contrail monitoring
+
+> [!IMPORTANT]
+> **Dataset access**
+>
+> The DOI for the 30-m segmentation dataset will be made publicly available
+> after acceptance of the associated article. The dataset is not included in
+> this software repository. Distribution of the original SDGSAT-1 full-scene
+> imagery is subject to authorization by the data provider; this repository
+> does not grant redistribution rights for those source images.
 
 This repository contains two code paths associated with the 30-m contrail
 structural benchmark:
@@ -42,8 +51,8 @@ an untrusted joblib or PyTorch file.
 
 ### Data layout
 
-The provider-controlled development data are not bundled with this software.
-When redistribution is permitted, use:
+The development data are not bundled with this software. When access has been
+authorized, use:
 
 ```text
 DATA_ROOT/
@@ -58,9 +67,8 @@ training protocol combines `train` and `val` for five-fold stratified training
 with seed 3407. The production checkpoint is from fold 5; `test` remains
 untouched until final evaluation.
 
-The DOI for the 30-m segmentation dataset will be made publicly available
-after acceptance of the associated article. The dataset is not included in
-this software repository.
+See the dataset-access notice at the top of this page for availability and
+distribution conditions.
 
 ### Frozen rules
 
@@ -247,9 +255,9 @@ nothing.
 
 ## Data and licences
 
-The MIT licence covers the software only. It does not grant redistribution
-rights for SDGSAT-1 imagery, the internal 16-bit mirror, ABI/SEVIRI products,
-ERA5 files or third-party trajectory archives. See
+The MIT licence covers the software only. Distribution of the original
+SDGSAT-1 full-scene imagery is subject to authorization by the data provider
+and is not granted by this repository. See
 [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before publishing a release.
 
 The implementation is publicly available at:
