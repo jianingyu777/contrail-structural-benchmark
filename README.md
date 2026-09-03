@@ -3,10 +3,9 @@
 ## Dataset
 
 The DOI for the 30-m segmentation dataset will be made publicly available
-after acceptance of the associated article. The dataset is not included in
-this software repository. Distribution of the original SDGSAT-1 full-scene
-imagery is subject to authorization by the data provider; this repository
-does not grant redistribution rights for those source images.
+after acceptance of the associated article. 
+
+## 
 
 This repository contains two code paths associated with the 30-m contrail
 structural benchmark:
@@ -259,5 +258,4 @@ SDGSAT-1 full-scene imagery is subject to authorization by the data provider
 and is not granted by this repository. See
 [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before publishing a release.
 
-The implementation is publicly available at:
-https://github.com/jianingyu777/contrail-structural-benchmark.
+
