@@ -30,13 +30,13 @@
     },
     {
       "path": "NOTICE",
-      "bytes": 575,
-      "sha256": "160d7a6424f77335f71d76c16870e1709bf2f4b9e0046ec10cfe516b80ef5598"
+      "bytes": 943,
+      "sha256": "8d9a5032496e51260a73943fc430bdd3872ba5edddc7e5bf1d31690c5f8ad0e1"
     },
     {
       "path": "README.md",
-      "bytes": 11026,
-      "sha256": "fd172155c3409ffbfe57b593c4ac4c65f2e9dd45676cd8c4919c2d909d3afa10"
+      "bytes": 11154,
+      "sha256": "65322eef13134bbeabe05469f0863419e68625737ccea43d506e6065abb0fd42"
     },
     {
       "path": "configs/physical_audit_paper.json",
@@ -50,8 +50,8 @@
     },
     {
       "path": "docs/DATA_ACCESS.md",
-      "bytes": 1399,
-      "sha256": "7f75b21fd5d979afb6a4f30f5f01952e8d7ca12d43f71166bf62cb3f7d885635"
+      "bytes": 1949,
+      "sha256": "0036218925c15a788aea10c361050570172ac74a15756e8d1f6fef5560f06e40"
     },
     {
       "path": "docs/DATA_FORMATS.md",

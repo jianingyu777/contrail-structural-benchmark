@@ -7,5 +7,11 @@ author-generated frozen research artifacts distributed with this software
 release. This distribution does not grant rights to the observational data
 used to calibrate or evaluate those artifacts.
 
+Historical ADS-B trajectories used in the geometric audit were obtained from
+ADSB.lol Globe History and are made available by their source under the Open
+Database License v1.0. We thank ADSB.lol, its contributing feeders and partner
+networks for maintaining and openly sharing the archive. Raw ADS-B records are
+not redistributed with this software.
+
 Serialized PyTorch and joblib files can execute code when loaded. Use only
 trusted release artifacts after verifying their SHA-256 digests.

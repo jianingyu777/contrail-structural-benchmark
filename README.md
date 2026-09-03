@@ -258,4 +258,10 @@ SDGSAT-1 full-scene imagery is subject to authorization by the data provider
 and is not granted by this repository. See
 [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before publishing a release.
 
-
+ADS-B trajectories used in the geometric audit were obtained from the
+[ADSB.lol Globe History](https://github.com/adsblol/globe_history_2024) daily
+archives, which are made available under the
+[Open Database License v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
+We thank ADSB.lol, its contributing feeders and partner networks for
+maintaining and openly sharing this historical aircraft-trace archive. Raw
+ADS-B archives are not redistributed in this repository.
