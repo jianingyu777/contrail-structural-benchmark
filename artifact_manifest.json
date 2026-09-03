@@ -35,8 +35,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11062,
-      "sha256": "5a17365434c619b4a1a368d4cb6d74c14faa8d6c00731bfb7b55ead34247dee8"
+      "bytes": 11026,
+      "sha256": "fd172155c3409ffbfe57b593c4ac4c65f2e9dd45676cd8c4919c2d909d3afa10"
     },
     {
       "path": "configs/physical_audit_paper.json",

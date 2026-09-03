@@ -1,13 +1,12 @@
 # A 30-m structural benchmark for task-aligned evaluation of geostationary contrail monitoring
 
-> [!IMPORTANT]
-> **Dataset access**
->
-> The DOI for the 30-m segmentation dataset will be made publicly available
-> after acceptance of the associated article. The dataset is not included in
-> this software repository. Distribution of the original SDGSAT-1 full-scene
-> imagery is subject to authorization by the data provider; this repository
-> does not grant redistribution rights for those source images.
+## Dataset
+
+The DOI for the 30-m segmentation dataset will be made publicly available
+after acceptance of the associated article. The dataset is not included in
+this software repository. Distribution of the original SDGSAT-1 full-scene
+imagery is subject to authorization by the data provider; this repository
+does not grant redistribution rights for those source images.
 
 This repository contains two code paths associated with the 30-m contrail
 structural benchmark:
