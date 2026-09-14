@@ -1,0 +1,36 @@
+{
+  "estimation_split": "train",
+  "train_records": 13213,
+  "fill_rule": "values equal to 0 or greater than or equal to 65000",
+  "fill_replacement": "train-channel median",
+  "clipping": "train-channel P1 to P99",
+  "scaling": "linear to [0,1] after clipping",
+  "quantile_method": "nearest rank from exact uint16 histogram",
+  "p01": [
+    657,
+    812,
+    582
+  ],
+  "median": [
+    1228,
+    1479,
+    1033
+  ],
+  "p99": [
+    2112,
+    2437,
+    1657
+  ],
+  "valid_pixel_count": [
+    823525797,
+    823525809,
+    823525773
+  ],
+  "fill_pixel_count": [
+    42401371,
+    42401359,
+    42401395
+  ],
+  "records_manifest_sha256": "3b79ac37142f19ff336d41e14b67efd0912382b6e2a115398e7b4baa4b65006a",
+  "histogram_sha256": "7a78a1f01b065398558626eda84e3c8f47703521137eb60a140093188f598580"
+}

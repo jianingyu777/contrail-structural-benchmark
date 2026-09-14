@@ -1,0 +1,15 @@
+{
+  "seed": 3407,
+  "image_size": 256,
+  "epochs": 30,
+  "patience": 8,
+  "physical_batch_size": 32,
+  "effective_batch_size": 32,
+  "workers": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "warmup_epochs": 1,
+  "positive_class_weight": 5.0,
+  "dice_loss_weight": 1.0,
+  "difficult_negative_sampling_weight": 1.2
+}

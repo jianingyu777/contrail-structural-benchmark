@@ -1,0 +1,296 @@
+{
+  "table": "records.csv",
+  "primary_key": "record_id",
+  "row_count": 19455,
+  "fields": [
+    {
+      "field": "record_id",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Unique record key and shared image/mask filename stem",
+      "enum": null
+    },
+    {
+      "field": "scene_id",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Processing-level-specific source-scene key; joins source_scenes.csv",
+      "enum": null
+    },
+    {
+      "field": "acquisition_date",
+      "type": "date",
+      "unit": "UTC calendar date",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "ISO 8601 YYYY-MM-DD; not a time of day",
+      "enum": null
+    },
+    {
+      "field": "year",
+      "type": "integer",
+      "unit": "year",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Calendar year of acquisition",
+      "enum": null
+    },
+    {
+      "field": "month",
+      "type": "integer",
+      "unit": "month",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Calendar month, 1 through 12",
+      "enum": null
+    },
+    {
+      "field": "season",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "DJF;MAM;JJA;SON",
+      "definition": "Meteorological month grouping, used consistently in both hemispheres",
+      "enum": [
+        "DJF",
+        "MAM",
+        "JJA",
+        "SON"
+      ]
+    },
+    {
+      "field": "longitude_from_filename",
+      "type": "number",
+      "unit": "degrees east",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Nominal source-scene longitude; not a patch-centre coordinate",
+      "enum": null
+    },
+    {
+      "field": "latitude_from_filename",
+      "type": "number",
+      "unit": "degrees north",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Nominal source-scene latitude; not a patch-centre coordinate",
+      "enum": null
+    },
+    {
+      "field": "source_product_id",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Source-product identifier; read as string rather than a numerical measurement",
+      "enum": null
+    },
+    {
+      "field": "source_product_level",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "L4A;L4B;NOT_ENCODED",
+      "definition": "Processing-level token encoded in the source name",
+      "enum": [
+        "L4A",
+        "L4B",
+        "NOT_ENCODED"
+      ]
+    },
+    {
+      "field": "split",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "train;validation;test",
+      "definition": "Fixed scene/date-grouped partition",
+      "enum": [
+        "train",
+        "validation",
+        "test"
+      ]
+    },
+    {
+      "field": "sample_class",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "positive;difficult_negative",
+      "definition": "positive for nonempty reference; difficult_negative for empty reference",
+      "enum": [
+        "positive",
+        "difficult_negative"
+      ]
+    },
+    {
+      "field": "foreground_pixels",
+      "type": "integer",
+      "unit": "pixels",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Number of reference-mask pixels equal to 255",
+      "enum": null
+    },
+    {
+      "field": "foreground_fraction",
+      "type": "number",
+      "unit": "fraction",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "foreground_pixels divided by 65536; not a percentage",
+      "enum": null
+    },
+    {
+      "field": "connected_component_count",
+      "type": "integer",
+      "unit": "components",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Number of eight-connected foreground components; zero for empty reference",
+      "enum": null
+    },
+    {
+      "field": "image_8bit_path",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Forward-slash path relative to data root; RGB PNG",
+      "enum": null
+    },
+    {
+      "field": "image_16bit_path",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Forward-slash path relative to data root; three-band TIFF",
+      "enum": null
+    },
+    {
+      "field": "mask_path",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "Forward-slash path relative to data root; binary PNG",
+      "enum": null
+    },
+    {
+      "field": "image_8bit_dtype",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "uint8",
+      "definition": "Decoded RGB array dtype",
+      "enum": [
+        "uint8"
+      ]
+    },
+    {
+      "field": "image_8bit_shape",
+      "type": "string",
+      "unit": "pixels",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "256|256|3",
+      "definition": "Decoded RGB H|W|C array dimensions",
+      "enum": [
+        "256|256|3"
+      ]
+    },
+    {
+      "field": "image_16bit_dtype",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "uint16",
+      "definition": "Decoded source-value array dtype",
+      "enum": [
+        "uint16"
+      ]
+    },
+    {
+      "field": "image_16bit_shape",
+      "type": "string",
+      "unit": "pixels",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "256|256|3;3|256|256",
+      "definition": "Recorded TIFF array dimensions: H|W|C or C|H|W; inspect before use",
+      "enum": [
+        "256|256|3",
+        "3|256|256"
+      ]
+    },
+    {
+      "field": "mask_dtype",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "uint8",
+      "definition": "Decoded reference array dtype",
+      "enum": [
+        "uint8"
+      ]
+    },
+    {
+      "field": "mask_shape",
+      "type": "string",
+      "unit": "pixels",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "256|256",
+      "definition": "Decoded reference H|W array dimensions",
+      "enum": [
+        "256|256"
+      ]
+    },
+    {
+      "field": "image_8bit_pixel_sha256",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "64 lowercase hexadecimal characters; C-contiguous decoded RGB uint8 bytes",
+      "enum": null
+    },
+    {
+      "field": "mask_pixel_sha256",
+      "type": "string",
+      "unit": "",
+      "missing_value": "empty CSV field",
+      "missing_count": 0,
+      "allowed_values": "",
+      "definition": "64 lowercase hexadecimal characters; C-contiguous decoded mask uint8 bytes",
+      "enum": null
+    }
+  ]
+}

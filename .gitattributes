@@ -1,10 +1,6 @@
-*.joblib binary
-*.nc binary
-*.pth binary
-*.pt binary
-*.csv text eol=lf
-*.json text eol=lf
-*.md text eol=lf
-*.py text eol=lf
-*.toml text eol=lf
-*.yml text eol=lf
+* -text
+*.png binary
+*.tif binary
+*.tiff binary
+*.pdf binary
+*.docx binary

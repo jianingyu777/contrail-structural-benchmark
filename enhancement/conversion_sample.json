@@ -1,0 +1,25 @@
+{
+  "records_checked": 51,
+  "exact_records": 51,
+  "all_records": false,
+  "mean_absolute_difference_dn": 0.0,
+  "maximum_absolute_difference_dn": 0,
+  "equal_channel_fraction": 1.0,
+  "by_product_level": [
+    {
+      "source_product_level": "L4A",
+      "records": 25,
+      "exact": 25
+    },
+    {
+      "source_product_level": "L4B",
+      "records": 25,
+      "exact": 25
+    },
+    {
+      "source_product_level": "NOT_ENCODED",
+      "records": 1,
+      "exact": 1
+    }
+  ]
+}

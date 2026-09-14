@@ -1,0 +1,27 @@
+field,type,unit,missing_value,missing_count,allowed_values,definition
+record_id,string,,empty CSV field,0,,Unique record key and shared image/mask filename stem
+scene_id,string,,empty CSV field,0,,Processing-level-specific source-scene key; joins source_scenes.csv
+acquisition_date,date,UTC calendar date,empty CSV field,0,,ISO 8601 YYYY-MM-DD; not a time of day
+year,integer,year,empty CSV field,0,,Calendar year of acquisition
+month,integer,month,empty CSV field,0,,"Calendar month, 1 through 12"
+season,string,,empty CSV field,0,DJF;MAM;JJA;SON,"Meteorological month grouping, used consistently in both hemispheres"
+longitude_from_filename,number,degrees east,empty CSV field,0,,Nominal source-scene longitude; not a patch-centre coordinate
+latitude_from_filename,number,degrees north,empty CSV field,0,,Nominal source-scene latitude; not a patch-centre coordinate
+source_product_id,string,,empty CSV field,0,,Source-product identifier; read as string rather than a numerical measurement
+source_product_level,string,,empty CSV field,0,L4A;L4B;NOT_ENCODED,Processing-level token encoded in the source name
+split,string,,empty CSV field,0,train;validation;test,Fixed scene/date-grouped partition
+sample_class,string,,empty CSV field,0,positive;difficult_negative,positive for nonempty reference; difficult_negative for empty reference
+foreground_pixels,integer,pixels,empty CSV field,0,,Number of reference-mask pixels equal to 255
+foreground_fraction,number,fraction,empty CSV field,0,,foreground_pixels divided by 65536; not a percentage
+connected_component_count,integer,components,empty CSV field,0,,Number of eight-connected foreground components; zero for empty reference
+image_8bit_path,string,,empty CSV field,0,,Forward-slash path relative to data root; RGB PNG
+image_16bit_path,string,,empty CSV field,0,,Forward-slash path relative to data root; three-band TIFF
+mask_path,string,,empty CSV field,0,,Forward-slash path relative to data root; binary PNG
+image_8bit_dtype,string,,empty CSV field,0,uint8,Decoded RGB array dtype
+image_8bit_shape,string,pixels,empty CSV field,0,256|256|3,Decoded RGB H|W|C array dimensions
+image_16bit_dtype,string,,empty CSV field,0,uint16,Decoded source-value array dtype
+image_16bit_shape,string,pixels,empty CSV field,0,256|256|3;3|256|256,Recorded TIFF array dimensions: H|W|C or C|H|W; inspect before use
+mask_dtype,string,,empty CSV field,0,uint8,Decoded reference array dtype
+mask_shape,string,pixels,empty CSV field,0,256|256,Decoded reference H|W array dimensions
+image_8bit_pixel_sha256,string,,empty CSV field,0,,64 lowercase hexadecimal characters; C-contiguous decoded RGB uint8 bytes
+mask_pixel_sha256,string,,empty CSV field,0,,64 lowercase hexadecimal characters; C-contiguous decoded mask uint8 bytes

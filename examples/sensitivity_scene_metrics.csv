@@ -1,7 +1,0 @@
-date_yyyymmdd,scene_id,sensitivity_scenario,fixed_budget_loss
-20240101,scene_001,primary,0.12
-20240101,scene_001,height_plus_0.5km,0.13
-20240101,scene_002,primary,0.18
-20240101,scene_002,height_plus_0.5km,0.17
-20240102,scene_003,primary,0.21
-20240102,scene_003,height_plus_0.5km,0.22

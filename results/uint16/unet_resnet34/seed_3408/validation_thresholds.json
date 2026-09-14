@@ -1,0 +1,560 @@
+[
+  {
+    "threshold": 0.05,
+    "dice": 0.49067325585009763,
+    "iou": 0.32509412408673605,
+    "difficult_negative_activation_rate": 1.0
+  },
+  {
+    "threshold": 0.06,
+    "dice": 0.5125401580709246,
+    "iou": 0.3445741146236359,
+    "difficult_negative_activation_rate": 0.9909194097616345
+  },
+  {
+    "threshold": 0.07,
+    "dice": 0.5296498365391704,
+    "iou": 0.36022020448007414,
+    "difficult_negative_activation_rate": 0.9704880817253121
+  },
+  {
+    "threshold": 0.08,
+    "dice": 0.5437693213558469,
+    "iou": 0.3734087801680789,
+    "difficult_negative_activation_rate": 0.9562996594778661
+  },
+  {
+    "threshold": 0.09,
+    "dice": 0.5555138551292077,
+    "iou": 0.38457541257960476,
+    "difficult_negative_activation_rate": 0.9409761634506243
+  },
+  {
+    "threshold": 0.1,
+    "dice": 0.5656420090845629,
+    "iou": 0.3943520464675338,
+    "difficult_negative_activation_rate": 0.9296254256526674
+  },
+  {
+    "threshold": 0.11,
+    "dice": 0.5743302335287142,
+    "iou": 0.40284941648882305,
+    "difficult_negative_activation_rate": 0.9154370034052214
+  },
+  {
+    "threshold": 0.12,
+    "dice": 0.5821198426722075,
+    "iou": 0.410556449121412,
+    "difficult_negative_activation_rate": 0.8921679909194098
+  },
+  {
+    "threshold": 0.13,
+    "dice": 0.5889948643467087,
+    "iou": 0.4174292846028556,
+    "difficult_negative_activation_rate": 0.8694665153234961
+  },
+  {
+    "threshold": 0.14,
+    "dice": 0.5953775530550419,
+    "iou": 0.42387016835020896,
+    "difficult_negative_activation_rate": 0.8592508513053349
+  },
+  {
+    "threshold": 0.15,
+    "dice": 0.6012530730196821,
+    "iou": 0.42985121998994924,
+    "difficult_negative_activation_rate": 0.8484676503972758
+  },
+  {
+    "threshold": 0.16,
+    "dice": 0.6066745683017919,
+    "iou": 0.43541483884519844,
+    "difficult_negative_activation_rate": 0.8376844494892168
+  },
+  {
+    "threshold": 0.17,
+    "dice": 0.6117806764624995,
+    "iou": 0.44069454018515053,
+    "difficult_negative_activation_rate": 0.825766174801362
+  },
+  {
+    "threshold": 0.18,
+    "dice": 0.6165519578043618,
+    "iou": 0.4456632551417301,
+    "difficult_negative_activation_rate": 0.8127128263337117
+  },
+  {
+    "threshold": 0.19,
+    "dice": 0.6212023692820503,
+    "iou": 0.45053919113465973,
+    "difficult_negative_activation_rate": 0.8098751418842225
+  },
+  {
+    "threshold": 0.2,
+    "dice": 0.6257350201213301,
+    "iou": 0.4553234123571821,
+    "difficult_negative_activation_rate": 0.7990919409761634
+  },
+  {
+    "threshold": 0.21,
+    "dice": 0.6302547801371412,
+    "iou": 0.46012555546661693,
+    "difficult_negative_activation_rate": 0.7883087400681045
+  },
+  {
+    "threshold": 0.22,
+    "dice": 0.6347427452171831,
+    "iou": 0.4649253779780552,
+    "difficult_negative_activation_rate": 0.782633371169126
+  },
+  {
+    "threshold": 0.23,
+    "dice": 0.6389944129990243,
+    "iou": 0.4695016825074695,
+    "difficult_negative_activation_rate": 0.7746878547105562
+  },
+  {
+    "threshold": 0.24,
+    "dice": 0.64314189841127,
+    "iou": 0.4739934836651101,
+    "difficult_negative_activation_rate": 0.7673098751418842
+  },
+  {
+    "threshold": 0.25,
+    "dice": 0.6470676198441383,
+    "iou": 0.4782704807239474,
+    "difficult_negative_activation_rate": 0.7639046538024972
+  },
+  {
+    "threshold": 0.26,
+    "dice": 0.650772532531559,
+    "iou": 0.48232973921929206,
+    "difficult_negative_activation_rate": 0.7582292849035187
+  },
+  {
+    "threshold": 0.27,
+    "dice": 0.6542618118204568,
+    "iou": 0.4861731780871241,
+    "difficult_negative_activation_rate": 0.7531214528944381
+  },
+  {
+    "threshold": 0.28,
+    "dice": 0.6575677640908493,
+    "iou": 0.4898331152227711,
+    "difficult_negative_activation_rate": 0.7451759364358683
+  },
+  {
+    "threshold": 0.29,
+    "dice": 0.6606730350678022,
+    "iou": 0.49328733936245966,
+    "difficult_negative_activation_rate": 0.7395005675368899
+  },
+  {
+    "threshold": 0.3,
+    "dice": 0.6635846531060114,
+    "iou": 0.4965407308800162,
+    "difficult_negative_activation_rate": 0.7360953461975028
+  },
+  {
+    "threshold": 0.31,
+    "dice": 0.6663181048873011,
+    "iou": 0.4996079704830933,
+    "difficult_negative_activation_rate": 0.7321225879682179
+  },
+  {
+    "threshold": 0.32,
+    "dice": 0.6689332662689798,
+    "iou": 0.5025542666774788,
+    "difficult_negative_activation_rate": 0.7275822928490352
+  },
+  {
+    "threshold": 0.33,
+    "dice": 0.6714461477529456,
+    "iou": 0.5053962597129901,
+    "difficult_negative_activation_rate": 0.7236095346197503
+  },
+  {
+    "threshold": 0.34,
+    "dice": 0.6738011779663998,
+    "iou": 0.5080695041888136,
+    "difficult_negative_activation_rate": 0.7213393870601589
+  },
+  {
+    "threshold": 0.35,
+    "dice": 0.6760286893088306,
+    "iou": 0.5106067509543806,
+    "difficult_negative_activation_rate": 0.7122587968217934
+  },
+  {
+    "threshold": 0.36,
+    "dice": 0.6781677430872254,
+    "iou": 0.5130512888761924,
+    "difficult_negative_activation_rate": 0.7094211123723042
+  },
+  {
+    "threshold": 0.37,
+    "dice": 0.6802049759922364,
+    "iou": 0.5153868317571677,
+    "difficult_negative_activation_rate": 0.7043132803632236
+  },
+  {
+    "threshold": 0.38,
+    "dice": 0.6821990556357775,
+    "iou": 0.5176798958547618,
+    "difficult_negative_activation_rate": 0.6980703745743473
+  },
+  {
+    "threshold": 0.39,
+    "dice": 0.6840919158831902,
+    "iou": 0.5198629935785584,
+    "difficult_negative_activation_rate": 0.6929625425652668
+  },
+  {
+    "threshold": 0.4,
+    "dice": 0.6859240124082931,
+    "iou": 0.521982000192682,
+    "difficult_negative_activation_rate": 0.6878547105561862
+  },
+  {
+    "threshold": 0.41,
+    "dice": 0.6877391639166921,
+    "iou": 0.5240872431805406,
+    "difficult_negative_activation_rate": 0.6855845629965948
+  },
+  {
+    "threshold": 0.42,
+    "dice": 0.6895229060534245,
+    "iou": 0.5261617385290478,
+    "difficult_negative_activation_rate": 0.6816118047673099
+  },
+  {
+    "threshold": 0.43,
+    "dice": 0.6912763192278515,
+    "iou": 0.5282064727521378,
+    "difficult_negative_activation_rate": 0.6759364358683314
+  },
+  {
+    "threshold": 0.44,
+    "dice": 0.6930240919963454,
+    "iou": 0.5302500893493192,
+    "difficult_negative_activation_rate": 0.6736662883087401
+  },
+  {
+    "threshold": 0.45,
+    "dice": 0.6947764480715405,
+    "iou": 0.5323045596633716,
+    "difficult_negative_activation_rate": 0.6691259931895573
+  },
+  {
+    "threshold": 0.46,
+    "dice": 0.6965506936297832,
+    "iou": 0.5343903213002615,
+    "difficult_negative_activation_rate": 0.6662883087400681
+  },
+  {
+    "threshold": 0.47,
+    "dice": 0.6983606704148906,
+    "iou": 0.5365239467967592,
+    "difficult_negative_activation_rate": 0.6617480136208853
+  },
+  {
+    "threshold": 0.48,
+    "dice": 0.7001799664237237,
+    "iou": 0.5386745459656248,
+    "difficult_negative_activation_rate": 0.6583427922814983
+  },
+  {
+    "threshold": 0.49,
+    "dice": 0.7020418392694661,
+    "iou": 0.5408817175388254,
+    "difficult_negative_activation_rate": 0.6538024971623155
+  },
+  {
+    "threshold": 0.5,
+    "dice": 0.7039513479870501,
+    "iou": 0.5431519464132094,
+    "difficult_negative_activation_rate": 0.6498297389330306
+  },
+  {
+    "threshold": 0.51,
+    "dice": 0.7060069218773415,
+    "iou": 0.5456033218520963,
+    "difficult_negative_activation_rate": 0.6424517593643587
+  },
+  {
+    "threshold": 0.52,
+    "dice": 0.7080388286673446,
+    "iou": 0.5480341393983257,
+    "difficult_negative_activation_rate": 0.6390465380249716
+  },
+  {
+    "threshold": 0.53,
+    "dice": 0.7103247759452969,
+    "iou": 0.5507780274417117,
+    "difficult_negative_activation_rate": 0.6345062429057888
+  },
+  {
+    "threshold": 0.54,
+    "dice": 0.7126819114059074,
+    "iou": 0.553617569519467,
+    "difficult_negative_activation_rate": 0.6322360953461975
+  },
+  {
+    "threshold": 0.55,
+    "dice": 0.715281987996794,
+    "iou": 0.5567618584886853,
+    "difficult_negative_activation_rate": 0.6293984108967083
+  },
+  {
+    "threshold": 0.56,
+    "dice": 0.717771250903533,
+    "iou": 0.5597840879868872,
+    "difficult_negative_activation_rate": 0.6242905788876277
+  },
+  {
+    "threshold": 0.57,
+    "dice": 0.7202850304639132,
+    "iou": 0.5628480150740331,
+    "difficult_negative_activation_rate": 0.6214528944381384
+  },
+  {
+    "threshold": 0.58,
+    "dice": 0.7224741792695758,
+    "iou": 0.5655260876500343,
+    "difficult_negative_activation_rate": 0.6186152099886493
+  },
+  {
+    "threshold": 0.59,
+    "dice": 0.7245943193217551,
+    "iou": 0.5681285024043683,
+    "difficult_negative_activation_rate": 0.6157775255391601
+  },
+  {
+    "threshold": 0.6,
+    "dice": 0.7264314683370869,
+    "iou": 0.5703905602854187,
+    "difficult_negative_activation_rate": 0.6106696935300795
+  },
+  {
+    "threshold": 0.61,
+    "dice": 0.7283021165798449,
+    "iou": 0.5727005809124412,
+    "difficult_negative_activation_rate": 0.6044267877412032
+  },
+  {
+    "threshold": 0.62,
+    "dice": 0.7299852657705488,
+    "iou": 0.5747848793372059,
+    "difficult_negative_activation_rate": 0.6004540295119183
+  },
+  {
+    "threshold": 0.63,
+    "dice": 0.731627994543908,
+    "iou": 0.5768244579639891,
+    "difficult_negative_activation_rate": 0.5976163450624291
+  },
+  {
+    "threshold": 0.64,
+    "dice": 0.7331036954840677,
+    "iou": 0.5786611681404966,
+    "difficult_negative_activation_rate": 0.5936435868331441
+  },
+  {
+    "threshold": 0.65,
+    "dice": 0.7345914189149413,
+    "iou": 0.5805171783212076,
+    "difficult_negative_activation_rate": 0.5902383654937571
+  },
+  {
+    "threshold": 0.66,
+    "dice": 0.735943430155102,
+    "iou": 0.582207669903099,
+    "difficult_negative_activation_rate": 0.5856980703745743
+  },
+  {
+    "threshold": 0.67,
+    "dice": 0.7372784613676993,
+    "iou": 0.5838804826013122,
+    "difficult_negative_activation_rate": 0.5817253121452894
+  },
+  {
+    "threshold": 0.68,
+    "dice": 0.7384191146956871,
+    "iou": 0.585312541825306,
+    "difficult_negative_activation_rate": 0.5754824063564131
+  },
+  {
+    "threshold": 0.69,
+    "dice": 0.7394951420094334,
+    "iou": 0.5866658405333713,
+    "difficult_negative_activation_rate": 0.5709421112372304
+  },
+  {
+    "threshold": 0.7,
+    "dice": 0.7404408408730905,
+    "iou": 0.5878571367670756,
+    "difficult_negative_activation_rate": 0.565266742338252
+  },
+  {
+    "threshold": 0.71,
+    "dice": 0.74132989776984,
+    "iou": 0.5889787136886173,
+    "difficult_negative_activation_rate": 0.5624290578887627
+  },
+  {
+    "threshold": 0.72,
+    "dice": 0.7420621711588072,
+    "iou": 0.5899036932869662,
+    "difficult_negative_activation_rate": 0.554483541430193
+  },
+  {
+    "threshold": 0.73,
+    "dice": 0.7426852809482842,
+    "iou": 0.5906916301023086,
+    "difficult_negative_activation_rate": 0.5437003405221339
+  },
+  {
+    "threshold": 0.74,
+    "dice": 0.743102832360089,
+    "iou": 0.5912200707361136,
+    "difficult_negative_activation_rate": 0.539727582292849
+  },
+  {
+    "threshold": 0.75,
+    "dice": 0.7434104545119001,
+    "iou": 0.5916096128454861,
+    "difficult_negative_activation_rate": 0.5329171396140749
+  },
+  {
+    "threshold": 0.76,
+    "dice": 0.7436583575631496,
+    "iou": 0.59192367143122,
+    "difficult_negative_activation_rate": 0.5261066969353008
+  },
+  {
+    "threshold": 0.77,
+    "dice": 0.7436672951185157,
+    "iou": 0.5919349963819251,
+    "difficult_negative_activation_rate": 0.5187287173666288
+  },
+  {
+    "threshold": 0.78,
+    "dice": 0.7435008839584875,
+    "iou": 0.5917241599825555,
+    "difficult_negative_activation_rate": 0.5113507377979569
+  },
+  {
+    "threshold": 0.79,
+    "dice": 0.7432268562186093,
+    "iou": 0.5913770992769478,
+    "difficult_negative_activation_rate": 0.5079455164585698
+  },
+  {
+    "threshold": 0.8,
+    "dice": 0.742754179800826,
+    "iou": 0.5907788022577465,
+    "difficult_negative_activation_rate": 0.4982973893303065
+  },
+  {
+    "threshold": 0.81,
+    "dice": 0.7420585659445493,
+    "iou": 0.589899136680984,
+    "difficult_negative_activation_rate": 0.4875141884222474
+  },
+  {
+    "threshold": 0.82,
+    "dice": 0.741153783593776,
+    "iou": 0.5887564135591039,
+    "difficult_negative_activation_rate": 0.48127128263337116
+  },
+  {
+    "threshold": 0.83,
+    "dice": 0.7400835377663895,
+    "iou": 0.5874068320802408,
+    "difficult_negative_activation_rate": 0.4727582292849035
+  },
+  {
+    "threshold": 0.84,
+    "dice": 0.7386434129689283,
+    "iou": 0.5855944469339287,
+    "difficult_negative_activation_rate": 0.46538024971623154
+  },
+  {
+    "threshold": 0.85,
+    "dice": 0.7368704622290466,
+    "iou": 0.5833688788003509,
+    "difficult_negative_activation_rate": 0.46027241770715094
+  },
+  {
+    "threshold": 0.86,
+    "dice": 0.7345963810258465,
+    "iou": 0.5805233761077547,
+    "difficult_negative_activation_rate": 0.4534619750283768
+  },
+  {
+    "threshold": 0.87,
+    "dice": 0.7318129847390688,
+    "iou": 0.5770544690433511,
+    "difficult_negative_activation_rate": 0.4375709421112372
+  },
+  {
+    "threshold": 0.88,
+    "dice": 0.7281850081577586,
+    "iou": 0.5725557670168462,
+    "difficult_negative_activation_rate": 0.42565266742338254
+  },
+  {
+    "threshold": 0.89,
+    "dice": 0.7238709981934576,
+    "iou": 0.5672396733940809,
+    "difficult_negative_activation_rate": 0.4120317820658343
+  },
+  {
+    "threshold": 0.9,
+    "dice": 0.7184879778138001,
+    "iou": 0.5606564475205571,
+    "difficult_negative_activation_rate": 0.39841089670828606
+  },
+  {
+    "threshold": 0.91,
+    "dice": 0.7120841994709686,
+    "iou": 0.552896547412858,
+    "difficult_negative_activation_rate": 0.38081725312145287
+  },
+  {
+    "threshold": 0.92,
+    "dice": 0.7035979244227542,
+    "iou": 0.5427312541978652,
+    "difficult_negative_activation_rate": 0.36435868331441545
+  },
+  {
+    "threshold": 0.93,
+    "dice": 0.6931821489283205,
+    "iou": 0.530435169951087,
+    "difficult_negative_activation_rate": 0.34676503972758227
+  },
+  {
+    "threshold": 0.94,
+    "dice": 0.6786415626952483,
+    "iou": 0.5135938467078708,
+    "difficult_negative_activation_rate": 0.3280363223609535
+  },
+  {
+    "threshold": 0.95,
+    "dice": 0.6599652969949611,
+    "iou": 0.4924986610533171,
+    "difficult_negative_activation_rate": 0.2956867196367764
+  },
+  {
+    "threshold": 0.97,
+    "dice": 0.6001659030989253,
+    "iou": 0.4287407375113671,
+    "difficult_negative_activation_rate": 0.23609534619750283
+  },
+  {
+    "threshold": 0.99,
+    "dice": 0.4464413874809446,
+    "iou": 0.28736694186069445,
+    "difficult_negative_activation_rate": 0.12485811577752554
+  }
+]

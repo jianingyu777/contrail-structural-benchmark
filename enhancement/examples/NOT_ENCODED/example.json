@@ -1,0 +1,16 @@
+{
+  "record_id": "KX10_TIS_20220922_E7.05_N47.50_202200153400_head1_w_centered",
+  "source_product_level": "NOT_ENCODED",
+  "input_shape": [
+    3,
+    256,
+    256
+  ],
+  "output_shape": [
+    256,
+    256,
+    3
+  ],
+  "statistics_domain": "the complete input 256-by-256 patch, per band",
+  "expected_rgb_pixel_sha256": "83b3a3003180ee4ef80cd46695ca906a9e8ab595da154c9ddbe22642de586e48"
+}

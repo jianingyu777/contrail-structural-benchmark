@@ -1,19 +1,44 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated article and archived release."
-title: "A 30-m structural benchmark for task-aligned evaluation of geostationary contrail monitoring"
+message: "Please cite this software and the version-specific Figshare DOI of the dataset used."
 type: software
-version: 0.2.0
-date-released: 2026-09-02
-abstract: "Recovered MaxViT-U-Net training, inference and physical/statistical audit code for a 30-m contrail structural benchmark."
-keywords:
-  - contrails
-  - thermal infrared
-  - semantic segmentation
-  - geostationary satellite
-  - remote sensing
+title: "ContrailStruct30: code for three-band thermal-infrared contrail segmentation"
+version: "essd-20260914"
+repository-code: "https://github.com/jianingyu777/contrail-structural-benchmark"
+license: MIT
 authors:
   - family-names: Yu
     given-names: Jianing
-license: MIT
-repository-code: "https://github.com/jianingyu777/contrail-structural-benchmark"
-url: "https://github.com/jianingyu777/contrail-structural-benchmark"
+  - family-names: Zhao
+    given-names: Lixing
+  - family-names: Zhou
+    given-names: Xiaoxuan
+  - family-names: Li
+    given-names: Liyuan
+  - family-names: Ni
+    given-names: Xinyue
+  - family-names: Xue
+    given-names: Yuqing
+  - family-names: Wang
+    given-names: Kefang
+  - family-names: Li
+    given-names: Ying
+  - family-names: Du
+    given-names: Guanzheng
+  - family-names: Lu
+    given-names: Hanwei
+  - family-names: Tan
+    given-names: Chaoshuai
+  - family-names: Dai
+    given-names: Mingxin
+  - family-names: Hu
+    given-names: Zhuoyue
+  - family-names: Li
+    given-names: Xiaoyan
+  - family-names: Chen
+    given-names: Fansheng
+keywords:
+  - contrail segmentation
+  - SDGSAT-1
+  - thermal infrared
+  - semantic segmentation
+  - dataset benchmark

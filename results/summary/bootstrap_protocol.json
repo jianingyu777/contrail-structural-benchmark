@@ -1,0 +1,6 @@
+{
+  "cluster": "acquisition_date",
+  "replicates": 2000,
+  "interval": "percentile 95%",
+  "test_partition_only": true
+}

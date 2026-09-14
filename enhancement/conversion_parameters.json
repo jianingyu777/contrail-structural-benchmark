@@ -1,0 +1,29 @@
+{
+  "input": {
+    "bands": 3,
+    "storage_dtype": "uint16",
+    "expected_size_hw": [256, 256],
+    "resampling": "none"
+  },
+  "linear_stretch": {
+    "percentiles": [0, 95],
+    "zero_fill": "mean of non-zero pixels within each band"
+  },
+  "radiance_gain": [0.003947, 0.003946, 0.005329],
+  "radiance_bias": [0.167126, 0.124622, 0.222253],
+  "planck_k1": [1655.627802, 838.7063188, 543.0579522],
+  "planck_k2": [1542.760922, 1342.718697, 1232.021436],
+  "enhancement": {
+    "temperature_band": 2,
+    "temperature_percentile": 90,
+    "band2_band3_ratio_percentile": 40,
+    "band2_band1_ratio_percentile": 50,
+    "saturation_factor": 1.2
+  },
+  "output": {
+    "format": "PNG",
+    "mode": "RGB",
+    "dtype": "uint8"
+  }
+}
+

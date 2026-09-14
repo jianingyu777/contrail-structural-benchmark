@@ -1,267 +1,109 @@
-# A 30-m structural benchmark for task-aligned evaluation of geostationary contrail monitoring
+# ContrailStruct30: a 30 m three-band thermal-infrared dataset for contrail segmentation
 
 ## Dataset
 
-The DOI for the 30-m segmentation dataset will be made publicly available
-after acceptance of the associated article. 
+**Dataset record: [Figshare](https://doi.org/10.6084/m9.figshare.33435496)**
 
-## 
+This repository accompanies the **19,455-patch** ContrailStruct30 dataset.
+Every 256 x 256-pixel patch has an enhanced RGB PNG, a corresponding three-band
+uint16 TIFF, and a human-corrected binary mask. Download the dataset separately
+from Figshare and select the release matching the counts below and the supplied
+[record manifest](metadata/records.csv). Cite the version-specific dataset DOI
+shown on that release; the link above identifies the dataset record.
 
-This repository contains two code paths associated with the 30-m contrail
-structural benchmark:
+| Partition | Patches | Positive | Difficult negative |
+|---|---:|---:|---:|
+| Training | 13,213 | 6,243 | 6,970 |
+| Validation | 3,120 | 1,358 | 1,762 |
+| Test | 3,122 | 1,422 | 1,700 |
+| Total | 19,455 | 9,023 | 10,432 |
 
-1. MaxViT-Base encoder plus U-Net-like decoder training, validation, held-out
-   testing, patch inference and overlapping-window whole-scene inference.
-2. Physical and statistical audits covering ADS-B geometry, permutation nulls,
-   height-prior layer selection, effective optical depth, instantaneous
-   nighttime longwave response, clustered bootstrap and sensitivity analysis.
+The collection covers 305 dates and 819 processing-level-specific scene
+entries, representing 808 source-product identifiers. Source scenes and dates
+are disjoint across partitions. Set the data root to the directory directly
+containing `train/`, `validation/` and `test/`.
 
-Figure-generation and manuscript-build code are intentionally excluded.
+## Code
 
-## Evidence boundary
+The repository provides image enhancement, dataset reading, three segmentation
+baselines, validation-based model selection, held-out testing, patch inference,
+and date-clustered uncertainty estimates. Models use the complete upstream
+architectures in [segmentation-models-pytorch 0.5.0](https://github.com/qubvel-org/segmentation_models.pytorch).
 
-The segmentation unit is a connected 30-m thermal support, called a
-`contrail structure`. It is not necessarily one complete contrail or one
-unique flight. An ADS-B candidate establishes geometric consistency, not
-source-flight identity. The radiative endpoint is **positive instantaneous
-nighttime longwave contribution**. It is not lifecycle energy forcing, net
-climate forcing, avoided warming or mitigation benefit.
+| Model | Upstream architecture | Encoder |
+|---|---|---|
+| U-Net-ResNet34 | `smp.Unet` | `resnet34` |
+| DeepLabV3+-ResNet50 | `smp.DeepLabV3Plus` | `resnet50` |
+| SegFormer-B0 | `smp.Segformer` | `mit_b0` |
 
-## Installation
+The U-Net input-representation experiment uses seeds 3407, 3408 and 3409 for
+both enhanced 8-bit and normalized uint16 inputs. All runs retain the same
+split and training budget. Normalization statistics are estimated from the
+training partition only.
 
-The unified release environment was verified with Python 3.10, PyTorch 2.5.1,
-torchvision 0.20.1 and NumPy 2.2.6. NumPy 2 is required to deserialize the
-frozen CALIOP-calibrated model. A conda environment is supplied:
+## Quick Start
 
-```bash
-conda env create -f environment.yml
-conda activate contrail-structural-benchmark
-pip install -e ".[geo,test]"
+Use Python 3.10 for training and inference. Install the PyTorch 2.5.1 and
+torchvision 0.20.1 builds appropriate for your CPU or CUDA system, followed by:
+
+```sh
+python -m pip install -r requirements-ml.txt
+python code/verify_dataset.py --data-root /path/to/ContrailStruct30 --check-files
+python code/read_example.py --data-root /path/to/ContrailStruct30
+python code/train_benchmarks.py train --model unet_resnet34 --representation 8bit --seed 3407 --data-root /path/to/ContrailStruct30 --workspace runs
 ```
 
-The height regressors were serialized with scikit-learn 1.7.2; the ADS-B-
-calibrated model also requires XGBoost 3.1.2. The original segmentation
-working environment recorded PyTorch 2.0.1, while the released checkpoint was
-strictly compatibility-tested under the unified environment above. Never load
-an untrusted joblib or PyTorch file.
+For CPU-only data and statistics checks, a separately tested Python 3.14
+environment is specified in `requirements-data.txt`. Installation, all three
+model commands, the six-run representation experiment, and inference examples
+are in [Running the experiments](docs/RUNNING.md).
 
-## 1. Segmentation
+## Reference Results
 
-### Data layout
+The following results use enhanced 8-bit inputs and seed 3407. Probability
+thresholds were selected on validation data and frozen before test evaluation.
 
-The development data are not bundled with this software. When access has been
-authorized, use:
+| Model | Threshold | IoU | Dice | Mean positive-patch IoU | Difficult-negative activation (%) |
+|---|---:|---:|---:|---:|---:|
+| U-Net-ResNet34 | 0.86 | 0.631 | 0.773 | 0.616 | 35.41 |
+| DeepLabV3+-ResNet50 | 0.81 | 0.622 | 0.767 | 0.548 | 17.35 |
+| SegFormer-B0 | 0.63 | 0.660 | 0.795 | 0.594 | 20.24 |
 
-```text
-DATA_ROOT/
-  train/image/  train/label/
-  val/image/    val/label/
-  test/image/   test/label/
-```
+See [complete results and 95% intervals](results/summary/three_model_8bit_seed3407.csv),
+[foreground-area strata](results/summary/stratified_metrics_with_date_bootstrap.csv),
+and [three-seed input comparison](results/summary/unet_8bit_uint16_three_seed_summary.csv).
+Intervals use 2,000 acquisition-date-clustered bootstrap resamples. Negative
+activation is the percentage of empty-reference patches with any predicted
+foreground. Test-date intervals and training-seed variation are distinct.
 
-Images and labels are paired by identical filename stem. Images are enhanced
-three-channel 8-bit inputs. Labels may contain `0/1` or `0/255`. The recovered
-training protocol combines `train` and `val` for five-fold stratified training
-with seed 3407. The production checkpoint is from fold 5; `test` remains
-untouched until final evaluation.
+## Reproducibility Materials
 
-See the dataset-access notice at the top of this page for availability and
-distribution conditions.
+- [Image enhancement](enhancement/README.md): patch-local transform, fixed parameters and three real executable examples.
+- [Data dictionary](metadata/DATA_DICTIONARY.md): actual fields, types, units and path conventions.
+- [Evaluation protocol](docs/PROTOCOL.md): loss, augmentation, checkpoint and threshold selection, metrics and bootstrap.
+- [Contextual reassessment](review/README.md): recorded decisions for 100 patches and source-window metadata.
+- [Run records](results/): eight completed runs, training logs, threshold scans and per-patch confusion counts.
+- [Checkpoint manifest](results/checkpoint_manifest.csv): hashes and selected thresholds of the study checkpoints. Training generates compatible checkpoints; binary weights are not bundled in Git.
 
-### Frozen rules
+Full dataset imagery and contextual review images belong to the Figshare data
+release rather than this repository. Figure-generation and manuscript files
+are not part of this software repository.
 
-| Item | Rule |
-|---|---|
-| Architecture | `maxvit_base_tf_512.in21k_ft_in1k` encoder; decoder channels 384, 192, 96, 64; one-channel mask head; auxiliary centerline head during training |
-| Loss | weighted BCE + Tversky for batches containing positives + curriculum clDice + curriculum centerline BCE |
-| Curriculum | topology terms start after 20% of training and increase linearly to weights 0.5 and 0.3 |
-| Production threshold | 0.5, frozen before whole-scene inference |
-| Training threshold | scan 0.20 to 0.95; maximize positive-patch micro-IoU subject to negative-patch FP <= 0.15, otherwise maximize the penalized score |
-| Checkpoint score | selected positive-patch micro-IoU minus `lambda_fp` times negative-patch false-positive rate |
-| Reporting threshold | maximum validation Dice; negative-patch false-positive rate breaks ties; selected once before held-out test evaluation |
+## Citation and Acknowledgements
 
-The matching historical launcher and trainer have now been recovered. A
-sanitized source snapshot is retained under
-[`legacy/stageA_semantic_training`](legacy/stageA_semantic_training), while
-`contrail-train` is the maintained implementation for the pinned release
-environment. See [docs/TRAINING_SOURCE_AUDIT.md](docs/TRAINING_SOURCE_AUDIT.md)
-and [docs/PROVENANCE.md](docs/PROVENANCE.md).
+Use [CITATION.cff](CITATION.cff) to cite this software, and cite the Figshare
+version used for your data. Code snapshot: `essd-20260914`.
 
-### Train and evaluate
+We acknowledge the SDGSAT-1 Open Science Program of the International Research
+Center of Big Data for Sustainable Development Goals. We thank
+[ADSB.lol](https://adsb.lol/) for historical flight trajectories used to guide
+candidate search, and the annotators and experts for label construction and
+reassessment. This work was supported by the National Natural Science
+Foundation of China (grant 62575297).
 
-```bash
-contrail-train --data-root DATA_ROOT --output-dir outputs/production \
-  --config configs/segmentation_paper.json --folds all
+## Licence
 
-contrail-evaluate --data-root DATA_ROOT \
-  --checkpoint outputs/production/stageA_semantic_fp_fold5_best_iou.pth \
-  --output-json outputs/production/test_metrics.json
-```
-
-Use `--folds 5` when only the production fold is required. The maintained
-trainer reproduces the recovered architecture, split, augmentation, loss,
-EMA, hard-negative curriculum, scheduler, threshold scan and checkpoint file
-names. It corrects a denominator-placement defect in the historical
-multi-threshold validation loop; the exact historical implementation remains
-available in `legacy/` for audit.
-
-The evaluator selects the reporting threshold on validation data and applies
-it once to the unchanged held-out test set. It records the checkpoint SHA-256,
-threshold and complete confusion counts.
-
-### Patch and whole-scene inference
-
-```bash
-contrail-infer-patches --image-dir PATCHES --checkpoint MODEL.pth \
-  --output-dir outputs/patches --threshold 0.5 --save-probability
-
-contrail-infer-scenes --manifest scenes.csv --path-column image_path \
-  --checkpoint MODEL.pth --output-dir outputs/scenes --threshold 0.5 \
-  --input-mode raw-tis --save-probability
-```
-
-Whole-scene defaults are 256-pixel tiles, 50% overlap, reflected edge padding
-and Hann-weighted probability blending. `raw-tis` reproduces the frozen
-three-band enhancement within each tile. Use `enhanced-8bit` only when the
-input raster already contains the enhanced model channels.
-
-## 2. Physical and statistical audits
-
-Example CSVs are under `examples/`; complete schemas and units are in
-[docs/DATA_FORMATS.md](docs/DATA_FORMATS.md).
-
-### ADS-B geometry and null models
-
-```bash
-contrail-adsb-match --structures examples/adsb_structures.csv \
-  --tracks examples/adsb_tracks.csv --output outputs/adsb_audit.csv \
-  --candidate-output outputs/adsb_all_candidates.csv
-
-contrail-adsb-null --audit outputs/adsb_audit.csv \
-  --summary outputs/adsb_null_summary.csv \
-  --replicates outputs/adsb_null_replicates.csv.gz
-```
-
-The matcher uses the complete skeleton and trajectory polylines in one
-projected metric CRS. The broad rule is 10 km/45 degrees; the strict rule is
-5 km/20 degrees. Both null models use 5,000 replicates and seed 20260810.
-The public matcher defaults to a +/-30-min point window, but that numeric
-window was not reported in the manuscript and is therefore explicitly marked
-as a release default rather than a frozen paper parameter.
-
-### Height-prior layer selection
-
-```bash
-contrail-height-select --structures examples/height_structures.csv \
-  --layers examples/height_layers.csv --output outputs/selected_height.csv
-```
-
-The command accepts precomputed ADS-B- and CALIOP-calibrated median height
-priors. Trusted frozen regressors can instead be supplied with `--adsb-model`
-and `--caliop-model`. Candidate ERA5 layers lie within 1.5 km of either prior
-or at 300, 250, 225 and 200 hPa. Ice-supersaturated candidates are preferred;
-the selected layer maximizes RHi minus 2 percentage points per kilometre from
-the blended prior.
-
-The complete serialized-model path can be exercised with the synthetic
-feature row supplied in the repository:
-
-```bash
-contrail-height-select \
-  --structures examples/height_model_features.csv \
-  --layers examples/height_layers.csv \
-  --adsb-model resources/height_lut/adsb_calibrated_height_model_p50.joblib \
-  --caliop-model resources/height_lut/caliop_calibrated_height_model_p50.joblib \
-  --adsb-feature-columns resources/height_lut/adsb_height_feature_cols.json \
-  --output outputs/selected_height_from_models.csv
-```
-
-This command also writes a provenance JSON containing artifact hashes,
-runtime package versions and the frozen layer-selection settings.
-
-### Effective optical depth and longwave response
-
-```bash
-contrail-retrieve-tau --input examples/optical_depth_input.csv \
-  --lut resources/height_lut/contrail_lut_final_v5.nc \
-  --output outputs/retrieved_tau.csv \
-  --sensitivity-output outputs/retrieved_tau_sensitivities.csv
-
-contrail-longwave --input examples/longwave_input.csv \
-  --output outputs/longwave_contribution.csv
-```
-
-The optical-depth output is a discrete effective TIR LUT coordinate
-conditional on supplied height and ice-layer assumptions. The optional
-sensitivity output repeats retrieval at height offsets of +/-0.5 and +/-1 km,
-thicknesses of 0.2 and 1.0 km, and effective radii of 5 and 20 micrometres.
-
-The frozen response is
-
-```text
-delta_E(tau) = amplitude * (1 - exp(-2.0969536 * tau))
-F = area_m2 * max(delta_E, 0)
-```
-
-`area_m2` is preferred. `area_km2` is accepted and converted to square metres.
-
-### Confidence intervals and sensitivity summaries
-
-```bash
-contrail-bootstrap --input examples/scene_metrics.csv \
-  --statistic mean --value fixed_budget_loss \
-  --output outputs/fixed_budget_loss_bootstrap.json \
-  --replicates-output outputs/fixed_budget_loss_replicates.csv.gz
-
-contrail-sensitivity --input examples/sensitivity_scene_metrics.csv \
-  --value fixed_budget_loss --scenario-column sensitivity_scenario \
-  --baseline primary --summary outputs/sensitivity_summary.csv \
-  --replicates-output outputs/sensitivity_replicates.csv.gz
-```
-
-The bootstrap resamples acquisition dates and then complete scene clusters
-within each sampled date. Percentile intervals, requested and finite replicate
-counts, random seed and cluster counts are written with every result.
-
-## Frozen artifacts
-
-The author-generated 1.1-MB libRadtran LUT and two author-generated
-height-prior regressors are in `resources/height_lut/`; their versions and
-SHA-256 digests are in the adjacent `artifact_manifest.json`. The 337-MB
-segmentation checkpoint is excluded from Git history.
-[CHECKPOINTS.md](CHECKPOINTS.md) records its exact digest and release
-instructions.
-
-## Tests
-
-```bash
-pytest
-
-# Optional integration test for the external production checkpoint
-CONTRAIL_CHECKPOINT=/path/to/stageA_semantic_fp_fold5_best_iou.pth \
-  pytest tests/test_checkpoint_compatibility.py
-
-# Optional integration test for the provider-controlled fold split
-CONTRAIL_DATA_ROOT=/path/to/20251122data \
-  pytest tests/test_dataset_split_compatibility.py
-```
-
-The test suite uses synthetic geometry and statistics plus the bundled frozen
-LUT. Standard tests never require restricted imagery or raw trajectory
-archives; the fold-split integration test reads labels in place and copies
-nothing.
-
-## Data and licences
-
-The MIT licence covers the software only. Distribution of the original
-SDGSAT-1 full-scene imagery is subject to authorization by the data provider
-and is not granted by this repository. See
-[docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before publishing a release.
-
-ADS-B trajectories used in the geometric audit were obtained from the
-[ADSB.lol Globe History](https://github.com/adsblol/globe_history_2024) daily
-archives, which are made available under the
-[Open Database License v1.0](https://opendatacommons.org/licenses/odbl/1-0/).
-We thank ADSB.lol, its contributing feeders and partner networks for
-maintaining and openly sharing this historical aircraft-trace archive. Raw
-ADS-B archives are not redistributed in this repository.
+Author-developed code is licensed under [MIT](LICENSE). Enhanced images,
+masks and author-generated dataset metadata follow the dataset's CC BY 4.0
+terms. SDGSAT-1 source-value imagery follows the applicable source-data terms.
+Upstream software retains its own licences. See [NOTICE.md](NOTICE.md).

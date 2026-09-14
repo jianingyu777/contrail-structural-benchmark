@@ -1,5 +1,0 @@
-scene_id,candidate_id,epoch_utc,x_m,y_m,altitude_ft
-scene_001,flight_A,1704067140,0,1000,35000
-scene_001,flight_A,1704067260,10000,1000,35000
-scene_001,flight_B,1704067140,0,18000,36000
-scene_001,flight_B,1704067260,10000,18000,36000

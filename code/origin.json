@@ -1,0 +1,7 @@
+{
+  "training_source_sha256": "5510a3e6087dea3777a40ed64cb93c935d3570ee17bc3f8af035ad92645aa229",
+  "construction": "Public segmentation-models-pytorch 0.5.0 architectures; original frozen experiment pipeline",
+  "release_adaptations": "portable default paths and standalone inference entry; model, optimization and selection logic unchanged",
+  "statistics_core": "Exact source-function extraction; no statistical changes",
+  "snapshot": "essd-20260913"
+}

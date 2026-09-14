@@ -1,3 +1,0 @@
-scene_id,structure_id,date_yyyymmdd,acquisition_epoch_utc,skeleton_wkt,coverage_supported
-scene_001,structure_001,20240101,1704067200,"LINESTRING (0 0, 5000 0, 10000 0)",true
-scene_001,structure_002,20240101,1704067200,"LINESTRING (0 12000, 5000 12000, 10000 12000)",true

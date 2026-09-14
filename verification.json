@@ -1,0 +1,155 @@
+{
+  "snapshot": "essd-20260914",
+  "checked_on": "2026-09-14",
+  "cpu_tests": [
+    {
+      "name": "manifest_and_component_paths",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"records\": 19455,\n  \"splits\": {\n    \"train\": {\n      \"records\": 13213,\n      \"positive\": 6243,\n      \"difficult_negative\": 6970,\n      \"scenes\": 580,\n      \"dates\": 203\n    },\n    \"validation\": {\n      \"records\": 3120,\n      \"positive\": 1358,\n      \"difficult_negative\": 1762,\n      \"scenes\": 119,\n      \"dates\": 51\n    },\n    \"test\": {\n      \"records\": 3122,\n      \"positive\": 1422,\n      \"difficult_negative\": 1700,\n      \"scenes\": 120,\n      \"dates\": 51\n    }\n  },\n  \"records_manifest_sha256\": \"3b79ac37142f19ff336d41e14b67efd0912382b6e2a115398e7b4baa4b65006a\",\n  \"component_files_checked\": 58365,\n  \"image_pixels_rechecked\": false\n}",
+      "stderr": ""
+    },
+    {
+      "name": "release_unit_tests",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_checkpoint_manifests (test_release.ReleaseTests.test_checkpoint_manifests) ... ok\ntest_component_path_rejects_traversal_and_wrong_split (test_release.ReleaseTests.test_component_path_rejects_traversal_and_wrong_split) ... ok\ntest_fixed_manifest (test_release.ReleaseTests.test_fixed_manifest) ... ok\ntest_local_markdown_links (test_release.ReleaseTests.test_local_markdown_links) ... ok\ntest_review_counts (test_release.ReleaseTests.test_review_counts) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 1.541s\n\nOK"
+    },
+    {
+      "name": "enhancement_examples",
+      "exit_code": 0,
+      "stdout": "L4A: pixel-exact; 08b366e056ac89c739bbabd0f3df9468d94e547bc40feaad4f97e22d550ae018\nL4B: pixel-exact; 910a8b659c8a0ddb46b8ffff0a0191cfd85252272330c806761fc3c23694dc0e\nNOT_ENCODED: pixel-exact; 83b3a3003180ee4ef80cd46695ca906a9e8ab595da154c9ddbe22642de586e48",
+      "stderr": "<site-packages>/rasterio\\__init__.py:379: NotGeoreferencedWarning: Dataset has no geotransform, gcps, or rpcs. The identity matrix will be returned.\n  dataset = DatasetReader(path, driver=driver, sharing=sharing, thread_safe=thread_safe, **kwargs)"
+    },
+    {
+      "name": "record_reader",
+      "exit_code": 0,
+      "stdout": "{\"rgb_shape\": [256, 256, 3], \"uint16_shape\": [256, 256, 3], \"mask_shape\": [256, 256], \"foreground_pixels\": 322, \"split\": \"train\", \"pixel_hashes_match\": true}",
+      "stderr": ""
+    },
+    {
+      "name": "frozen_statistics",
+      "exit_code": 0,
+      "stdout": "Verified deeplabv3plus_resnet50 / 8bit / 3407\nVerified segformer_b0 / 8bit / 3407\nVerified unet_resnet34 / 8bit / 3407\nVerified unet_resnet34 / 8bit / 3408\nVerified unet_resnet34 / 8bit / 3409\nVerified unet_resnet34 / uint16 / 3407\nVerified unet_resnet34 / uint16 / 3408\nVerified unet_resnet34 / uint16 / 3409\nPASS: 240 metric comparisons and associated 2,000-resample intervals",
+      "stderr": ""
+    }
+  ],
+  "model_inference_checks": [
+    {
+      "model": "unet_resnet34",
+      "representation": "8bit",
+      "threshold": 0.86,
+      "input_filename": "cut256_from_head_centered_flat_8bit__KX10_TIS_20221205_W119.59_N38.40_202200188675_L4B_11_19.png",
+      "input_sha256": "ac405214f31fb357601d4726a55f1ce3b5ccc76d70b9e037ba53282b667cc9ad",
+      "checkpoint_sha256": "d3dd94ea288775ff6b3a6308820e4c72b27b3fa4b1084aec285b5bf24f9a773c",
+      "normalization_sha256": null,
+      "output_shape": [
+        256,
+        256
+      ],
+      "foreground_pixels": 4481,
+      "preprocessing_identical_to_evaluation": true,
+      "strict_checkpoint_load": true,
+      "finite_output": true,
+      "overwrite_protection": true,
+      "training_started": false
+    },
+    {
+      "model": "deeplabv3plus_resnet50",
+      "representation": "8bit",
+      "threshold": 0.81,
+      "input_filename": "cut256_from_head_centered_flat_8bit__KX10_TIS_20221205_W119.59_N38.40_202200188675_L4B_11_19.png",
+      "input_sha256": "ac405214f31fb357601d4726a55f1ce3b5ccc76d70b9e037ba53282b667cc9ad",
+      "checkpoint_sha256": "673b9dfa6902d3b309bfc32de6fd3cd061aa2d6fe9b2964f4d54c717962e3c5f",
+      "normalization_sha256": null,
+      "output_shape": [
+        256,
+        256
+      ],
+      "foreground_pixels": 4776,
+      "preprocessing_identical_to_evaluation": true,
+      "strict_checkpoint_load": true,
+      "finite_output": true,
+      "overwrite_protection": true,
+      "training_started": false
+    },
+    {
+      "model": "segformer_b0",
+      "representation": "8bit",
+      "threshold": 0.63,
+      "input_filename": "cut256_from_head_centered_flat_8bit__KX10_TIS_20221205_W119.59_N38.40_202200188675_L4B_11_19.png",
+      "input_sha256": "ac405214f31fb357601d4726a55f1ce3b5ccc76d70b9e037ba53282b667cc9ad",
+      "checkpoint_sha256": "6d51e9872a546cb9d3f5d3aed48d76717748ecfeaf2f9c1e77f927ad57e2a3bf",
+      "normalization_sha256": null,
+      "output_shape": [
+        256,
+        256
+      ],
+      "foreground_pixels": 4583,
+      "preprocessing_identical_to_evaluation": true,
+      "strict_checkpoint_load": true,
+      "finite_output": true,
+      "overwrite_protection": true,
+      "training_started": false
+    },
+    {
+      "model": "unet_resnet34",
+      "representation": "uint16",
+      "threshold": 0.91,
+      "input_filename": "cut256_from_head_centered_flat_8bit__KX10_TIS_20221205_W119.59_N38.40_202200188675_L4B_11_19.tif",
+      "input_sha256": "0c394096f5ef19648438ffa63b63ad69d240f79d4d5efb2f0afd40646a5b90fb",
+      "checkpoint_sha256": "dfce9d33732cc3b807dd110e6b2ee4ba9dfc18fac44e6d033b9ca1f6c0ee8b4d",
+      "normalization_sha256": "a4e9304048bbeaaf17c1e4298ae637380a59f784c17cc9a654ffe208d6fa88e3",
+      "output_shape": [
+        256,
+        256
+      ],
+      "foreground_pixels": 4065,
+      "preprocessing_identical_to_evaluation": true,
+      "strict_checkpoint_load": true,
+      "finite_output": true,
+      "overwrite_protection": true,
+      "training_started": false
+    }
+  ],
+  "unchanged_scientific_implementations": [
+    {
+      "path": "code/convert_uint16_to_8bit.py",
+      "sha256": "b045599727760fd674fd546f84b2e3d181079065f2ec336fbdc6fe9ec80ed5b9"
+    },
+    {
+      "path": "code/evaluate_checkpoint.py",
+      "sha256": "a0cc646dd3d75ac6890f5e32b29cab0a246e9038f28a72acc8bcdd8d11f050f4"
+    },
+    {
+      "path": "code/read_example.py",
+      "sha256": "052b633913da045c2c4696dca163297793c8d50682b9fb678012c345a38bae89"
+    },
+    {
+      "path": "code/statistics_core.py",
+      "sha256": "aaf820bdba494521ca29c1ae9c9546576e2a1f052af31f8af8dacf601446015a"
+    },
+    {
+      "path": "code/train_benchmarks.py",
+      "sha256": "b3f167e39b4df4cac17c24561d4d8e5c9240a688d475779b99dd1a8fcedf0365"
+    },
+    {
+      "path": "code/verify_enhancement_examples.py",
+      "sha256": "e55530d2fdc34fe12ce498330f9edd83ca6a4db6e88f886e49e3a90d63587ae8"
+    },
+    {
+      "path": "code/verify_frozen_statistics.py",
+      "sha256": "dc235ec61f55dcac2999c9fbd1171c398c61e9b3c56019249d00985088598998"
+    }
+  ],
+  "new_training_started": false,
+  "local_runtime_directory_prefixes_removed_from_logs": true,
+  "frozen_results_and_data_metadata_unchanged": true,
+  "runtime_versions": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "Pillow": "12.3.0",
+    "tifffile": "2026.5.15",
+    "rasterio": "1.5.0",
+    "opencv-python-headless": "5.0.0.93"
+  }
+}

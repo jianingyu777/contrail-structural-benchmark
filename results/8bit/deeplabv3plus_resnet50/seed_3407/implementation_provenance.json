@@ -1,0 +1,10 @@
+{
+  "model": "DeepLabV3+-ResNet50",
+  "constructor": "segmentation_models_pytorch.DeepLabV3Plus",
+  "upstream_urls": {
+    "segmentation_models_pytorch": "https://github.com/qubvel-org/segmentation_models.pytorch",
+    "timm": "https://github.com/huggingface/pytorch-image-models"
+  },
+  "segmentation_models_pytorch_license": "MIT",
+  "timm_license": "Apache-2.0"
+}

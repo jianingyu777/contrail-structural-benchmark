@@ -1,0 +1,16 @@
+{
+  "record_id": "cut256_from_head_centered_flat_8bit__KX10_TIS_20221028_E49.48_N25.54_202200171629_L4B_12_16",
+  "source_product_level": "L4B",
+  "input_shape": [
+    3,
+    256,
+    256
+  ],
+  "output_shape": [
+    256,
+    256,
+    3
+  ],
+  "statistics_domain": "the complete input 256-by-256 patch, per band",
+  "expected_rgb_pixel_sha256": "910a8b659c8a0ddb46b8ffff0a0191cfd85252272330c806761fc3c23694dc0e"
+}

@@ -1,0 +1,49 @@
+{
+  "dataset_name": "ContrailStruct30",
+  "generated_at_utc": "2026-09-11T04:51:49.051512+00:00",
+  "records": 19455,
+  "positive_records": 9023,
+  "difficult_negative_records": 10432,
+  "source_scenes": 819,
+  "acquisition_dates": 305,
+  "date_min": "2022-08-26",
+  "date_max": "2024-09-04",
+  "scene_split_overlap": 0,
+  "date_split_overlap": 0,
+  "decoded_duplicate_image_groups": 0,
+  "positive_foreground_fraction": {
+    "q25": 0.0110321044921875,
+    "median": 0.035369873046875,
+    "q75": 0.1085205078125
+  },
+  "splits": {
+    "train": {
+      "records": 13213,
+      "positive_records": 6243,
+      "difficult_negative_records": 6970,
+      "source_scenes": 580,
+      "acquisition_dates": 203
+    },
+    "validation": {
+      "records": 3120,
+      "positive_records": 1358,
+      "difficult_negative_records": 1762,
+      "source_scenes": 119,
+      "acquisition_dates": 51
+    },
+    "test": {
+      "records": 3122,
+      "positive_records": 1422,
+      "difficult_negative_records": 1700,
+      "source_scenes": 120,
+      "acquisition_dates": 51
+    }
+  },
+  "qa": {
+    "record_ids_identical_across_components": true,
+    "all_8bit_rgb_uint8_256x256": true,
+    "all_source_images_uint16_three_band_256x256": true,
+    "all_masks_binary_uint8_256x256": true,
+    "all_files_copied_with_sha256": true
+  }
+}
