@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "model": "UNET_RESNET34",
+  "input": "RENDERED3",
+  "seed": 42,
+  "validation_decision_sha256": "63e004ee93483889171d9cdb0499a765ad314e91909a4c43f9be00779d95b9db",
+  "test_accessed": false
+}

@@ -9,3 +9,6 @@ tifffile==2025.5.10
 opencv-python-headless==4.11.0.86
 Pillow==10.4.0
 tqdm==4.67.1
+scipy==1.15.3
+scikit-image==0.25.2
+safetensors==0.5.3

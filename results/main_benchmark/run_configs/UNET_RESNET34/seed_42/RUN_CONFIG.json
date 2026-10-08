@@ -1,0 +1,43 @@
+{
+  "protocol_id": "P1_20260916_MAXVIT_MATCHED_BASELINES_V1",
+  "protocol_lock_sha256": "535630e386d953f14834f7a299f69e3b870372a10c102b039493bd6ed9cf4024",
+  "model": "UNET_RESNET34",
+  "input": "RENDERED3",
+  "input_channels": 3,
+  "input_size": 256,
+  "seed": 42,
+  "device": "cuda:0",
+  "initialization_files": [
+    {
+      "filename": "resnet34.safetensors",
+      "sha256": "6b4d04c7d050eb2f35d38c6dda1f51afc5672d1dc0b3abb13f1c1514780a1352"
+    }
+  ],
+  "model_meta": {
+    "implementation": "segmentation_models_pytorch.Unet",
+    "encoder": "resnet34",
+    "pretraining": "ImageNet-1K",
+    "encoder_internal_size": 256,
+    "preprocessing": "RGB / 255 only",
+    "trainable": "all parameters",
+    "tta": false
+  },
+  "total_parameters": 24436369,
+  "trainable_parameters": 24436369,
+  "train_rows": 13213,
+  "validation_rows": 3120,
+  "epochs_max": 24,
+  "patience": 6,
+  "batch_size": 12,
+  "eval_batch_size": 12,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.0001
+  },
+  "loss": "BCEWithLogits + soft Dice",
+  "augmentation": "identical horizontal and vertical flips for every input setting",
+  "threshold": "validation positive-patch macro Dice subject to negative-patch any-prediction rate <= 0.05",
+  "test_accessed": false,
+  "smoke": false
+}

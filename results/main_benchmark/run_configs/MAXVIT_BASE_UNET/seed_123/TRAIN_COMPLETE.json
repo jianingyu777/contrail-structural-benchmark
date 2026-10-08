@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "model": "MAXVIT_BASE_UNET",
+  "input": "RENDERED3",
+  "seed": 123,
+  "validation_decision_sha256": "eeb66ca2891c4df8511645111ba96b193aa233dd34fe8face9f11b864deef396",
+  "test_accessed": false
+}

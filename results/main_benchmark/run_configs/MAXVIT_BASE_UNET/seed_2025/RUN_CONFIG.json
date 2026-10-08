@@ -1,0 +1,41 @@
+{
+  "protocol_id": "P1_20260911_SCENE_SPLIT_RETRAIN_V1",
+  "protocol_lock_sha256": "4056d6c6e500e8dc0719151c281e48ceb4f8d8217ba50772bdf7d05e531ee835",
+  "model": "MAXVIT_BASE_UNET",
+  "input": "RENDERED3",
+  "input_channels": 3,
+  "input_size": 256,
+  "seed": 2025,
+  "device": "cuda:1",
+  "initialization_files": [
+    {
+      "filename": "aeedbd02154c98ebf7ece6c34bfdaa656181e12a23d7aacfc72a646b4da04d5c",
+      "sha256": "aeedbd02154c98ebf7ece6c34bfdaa656181e12a23d7aacfc72a646b4da04d5c"
+    }
+  ],
+  "model_meta": {
+    "encoder": "maxvit_base_tf_512.in21k_ft_in1k",
+    "decoder": "U-Net-like (384, 192, 96, 64)",
+    "encoder_internal_size": 256,
+    "centerline_head": false,
+    "comparison_role": "large hierarchical transformer baseline"
+  },
+  "total_parameters": 83947541,
+  "trainable_parameters": 83947541,
+  "train_rows": 13213,
+  "validation_rows": 3120,
+  "epochs_max": 24,
+  "patience": 6,
+  "batch_size": 12,
+  "eval_batch_size": 12,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.0001
+  },
+  "loss": "BCEWithLogits + soft Dice",
+  "augmentation": "identical horizontal and vertical flips for every input setting",
+  "threshold": "validation positive-patch macro Dice subject to negative-patch any-prediction rate <= 0.05",
+  "test_accessed": false,
+  "smoke": false
+}

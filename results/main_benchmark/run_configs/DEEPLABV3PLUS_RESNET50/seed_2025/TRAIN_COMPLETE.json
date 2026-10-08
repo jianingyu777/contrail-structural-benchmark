@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "model": "DEEPLABV3PLUS_RESNET50",
+  "input": "RENDERED3",
+  "seed": 2025,
+  "validation_decision_sha256": "b74da0808f516875263b6a28e869d0577c07bf10ca65f7ea15b1627dd615081f",
+  "test_accessed": false
+}

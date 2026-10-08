@@ -25,21 +25,26 @@ containing `train/`, `validation/` and `test/`.
 
 ## Code
 
-The repository provides image enhancement, dataset reading, three segmentation
-baselines, validation-based model selection, held-out testing, patch inference,
-and date-clustered uncertainty estimates. Models use the complete upstream
-architectures in [segmentation-models-pytorch 0.5.0](https://github.com/qubvel-org/segmentation_models.pytorch).
+The repository provides image enhancement, dataset reading, two distinct
+segmentation experiments, validation-based model selection, held-out testing,
+and date-clustered uncertainty estimates. The three smaller architectures use
+[segmentation-models-pytorch 0.5.0](https://github.com/qubvel-org/segmentation_models.pytorch).
 
 | Model | Upstream architecture | Encoder |
 |---|---|---|
 | U-Net-ResNet34 | `smp.Unet` | `resnet34` |
 | DeepLabV3+-ResNet50 | `smp.DeepLabV3Plus` | `resnet50` |
 | SegFormer-B0 | `smp.Segformer` | `mit_b0` |
+| MaxViT-B-U-Net | `timm` encoder and U-Net-like decoder | `maxvit_base_tf_512.in21k_ft_in1k` |
 
-The U-Net input-representation experiment uses seeds 3407, 3408 and 3409 for
-both enhanced 8-bit and normalized uint16 inputs. All runs retain the same
-split and training budget. Normalization statistics are estimated from the
-training partition only.
+**Experiment 1: four-model benchmark (Sects. 5.1–5.4).** All four models use
+enhanced RGB and seeds 42, 123 and 2025 under the matched training protocol.
+See [main benchmark instructions](docs/MAIN_BENCHMARK.md) and
+[archived results](results/main_benchmark/).
+
+**Experiment 2: RGB vs uint16 comparison (Sect. 5.5).** U-Net uses seeds
+3407, 3408 and 3409 in each input representation. This is a separate protocol;
+its normalization statistics are estimated from the training partition only.
 
 ## Quick Start
 
@@ -50,7 +55,7 @@ torchvision 0.20.1 builds appropriate for your CPU or CUDA system, followed by:
 python -m pip install -r requirements-ml.txt
 python code/verify_dataset.py --data-root /path/to/ContrailStruct30 --check-files
 python code/read_example.py --data-root /path/to/ContrailStruct30
-python code/train_benchmarks.py train --model unet_resnet34 --representation 8bit --seed 3407 --data-root /path/to/ContrailStruct30 --workspace runs
+python code/train_main_benchmark.py --model UNET_RESNET34 --seed 42 --data-root /path/to/ContrailStruct30
 ```
 
 For CPU-only data and statistics checks, a separately tested Python 3.14
@@ -60,21 +65,22 @@ are in [Running the experiments](docs/RUNNING.md).
 
 ## Reference Results
 
-The following results use enhanced 8-bit inputs and seed 3407. Probability
-thresholds were selected on validation data and frozen before test evaluation.
+The main four-model results use enhanced RGB and three seeds per model.
+Thresholds were selected on validation data and frozen before test evaluation.
 
-| Model | Threshold | IoU | Dice | Mean positive-patch IoU | Difficult-negative activation (%) |
-|---|---:|---:|---:|---:|---:|
-| U-Net-ResNet34 | 0.86 | 0.631 | 0.773 | 0.616 | 35.41 |
-| DeepLabV3+-ResNet50 | 0.81 | 0.622 | 0.767 | 0.548 | 17.35 |
-| SegFormer-B0 | 0.63 | 0.660 | 0.795 | 0.594 | 20.24 |
+| Model | Mean positive-patch Dice (mean +/- SD) | Difficult-negative activation (%) |
+|---|---:|---:|
+| MaxViT-B-U-Net | 0.8230 +/- 0.0056 | 34.57 |
+| U-Net-ResNet34 | 0.7978 +/- 0.0039 | 44.24 |
+| DeepLabV3+-ResNet50 | 0.7798 +/- 0.0026 | 53.90 |
+| SegFormer-B0 | 0.7903 +/- 0.0047 | 53.45 |
 
-See [complete results and 95% intervals](results/summary/three_model_8bit_seed3407.csv),
-[foreground-area strata](results/summary/stratified_metrics_with_date_bootstrap.csv),
-and [three-seed input comparison](results/summary/unet_8bit_uint16_three_seed_summary.csv).
-Intervals use 2,000 acquisition-date-clustered bootstrap resamples. Negative
-activation is the percentage of empty-reference patches with any predicted
-foreground. Test-date intervals and training-seed variation are distinct.
+See [per-seed results](results/main_benchmark/metrics/per_seed.csv),
+[three-seed summary](results/main_benchmark/summaries/three_seed_mean_sd.csv),
+[paired date-clustered 95% intervals](results/main_benchmark/bootstrap/paired_bootstrap_observation_date.csv),
+and [RGB-uint16 comparison](results/summary/unet_8bit_uint16_three_seed_summary.csv).
+Negative activation is the percentage of empty-reference patches with any
+predicted foreground. Test-date intervals and training-seed variation are distinct.
 
 ## Reproducibility Materials
 
@@ -82,7 +88,8 @@ foreground. Test-date intervals and training-seed variation are distinct.
 - [Data dictionary](metadata/DATA_DICTIONARY.md): actual fields, types, units and path conventions.
 - [Evaluation protocol](docs/PROTOCOL.md): loss, augmentation, checkpoint and threshold selection, metrics and bootstrap.
 - [Contextual reassessment](review/README.md): recorded decisions for 100 patches and source-window metadata.
-- [Run records](results/): eight completed runs, training logs, threshold scans and per-patch confusion counts.
+- [Main benchmark](results/main_benchmark/): 12 archived configurations, validation decisions and statistics.
+- [Representation comparison](results/): eight older-protocol runs, including six U-Net representation runs.
 - [Checkpoint manifest](results/checkpoint_manifest.csv): hashes and selected thresholds of the study checkpoints. Training generates compatible checkpoints; binary weights are not bundled in Git.
 
 Full dataset imagery and contextual review images belong to the Figshare data

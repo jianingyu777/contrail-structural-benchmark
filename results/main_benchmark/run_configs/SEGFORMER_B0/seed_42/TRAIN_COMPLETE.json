@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "model": "SEGFORMER_B0",
+  "input": "RENDERED3",
+  "seed": 42,
+  "validation_decision_sha256": "438a8e3b11005a194ed5144ddecaa7b36762571b5f77c46ad9b4f3c5c0d89e8e",
+  "test_accessed": false
+}

@@ -1,0 +1,22 @@
+{
+  "protocol_id": "P1_20260916_MAXVIT_MATCHED_BASELINES_V1",
+  "model": "SEGFORMER_B0",
+  "input": "RENDERED3",
+  "seed": 123,
+  "best_epoch": 18,
+  "best_validation_loss": 0.7461476665276747,
+  "selected_threshold": 0.42,
+  "selected_validation": {
+    "threshold": 0.42,
+    "validation_positive_patch_macro_dice": 0.7331481001301577,
+    "validation_negative_patch_any_prediction_rate": 0.6021566401816119,
+    "constraint_neg_any_le_0_05": false,
+    "positive_validation_patches": 1358,
+    "negative_validation_patches": 1762,
+    "selected": true,
+    "selection_fallback_no_threshold_met_fpr_constraint": true
+  },
+  "checkpoint_sha256": "07a7d52e8c22f8623aa4b740ff91217357c030fcbf639678e1fb6dcd5e354439",
+  "validation_sweep_sha256": "00470ab0d7f315b483bc99debace6846bdf07ea416d9a186c19aebb6f8bb7486",
+  "test_accessed": false
+}

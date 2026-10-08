@@ -1,0 +1,22 @@
+{
+  "protocol_id": "P1_20260916_MAXVIT_MATCHED_BASELINES_V1",
+  "model": "UNET_RESNET34",
+  "input": "RENDERED3",
+  "seed": 42,
+  "best_epoch": 17,
+  "best_validation_loss": 0.7437059595321234,
+  "selected_threshold": 0.3,
+  "selected_validation": {
+    "threshold": 0.3,
+    "validation_positive_patch_macro_dice": 0.7424447381685363,
+    "validation_negative_patch_any_prediction_rate": 0.5788876276958003,
+    "constraint_neg_any_le_0_05": false,
+    "positive_validation_patches": 1358,
+    "negative_validation_patches": 1762,
+    "selected": true,
+    "selection_fallback_no_threshold_met_fpr_constraint": true
+  },
+  "checkpoint_sha256": "ce2fd70431ab5f7eec9dd4e298182e62faace9bb6c91b430cb7a999349778192",
+  "validation_sweep_sha256": "7effdc9e953603ae2118f129f13683c7d6d0d791d07768f662fa0896316745f5",
+  "test_accessed": false
+}

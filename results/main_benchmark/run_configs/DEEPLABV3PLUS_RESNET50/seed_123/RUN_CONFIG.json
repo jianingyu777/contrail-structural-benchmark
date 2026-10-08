@@ -1,0 +1,43 @@
+{
+  "protocol_id": "P1_20260916_MAXVIT_MATCHED_BASELINES_V1",
+  "protocol_lock_sha256": "535630e386d953f14834f7a299f69e3b870372a10c102b039493bd6ed9cf4024",
+  "model": "DEEPLABV3PLUS_RESNET50",
+  "input": "RENDERED3",
+  "input_channels": 3,
+  "input_size": 256,
+  "seed": 123,
+  "device": "cuda:1",
+  "initialization_files": [
+    {
+      "filename": "resnet50.safetensors",
+      "sha256": "734b946b8a7da84a1d861cf03034f6a1b40431ba362ddb82baa56fe391d88925"
+    }
+  ],
+  "model_meta": {
+    "implementation": "segmentation_models_pytorch.DeepLabV3Plus",
+    "encoder": "resnet50",
+    "pretraining": "ImageNet-1K",
+    "encoder_internal_size": 256,
+    "preprocessing": "RGB / 255 only",
+    "trainable": "all parameters",
+    "tta": false
+  },
+  "total_parameters": 26677585,
+  "trainable_parameters": 26677585,
+  "train_rows": 13213,
+  "validation_rows": 3120,
+  "epochs_max": 24,
+  "patience": 6,
+  "batch_size": 12,
+  "eval_batch_size": 12,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0002,
+    "weight_decay": 0.0001
+  },
+  "loss": "BCEWithLogits + soft Dice",
+  "augmentation": "identical horizontal and vertical flips for every input setting",
+  "threshold": "validation positive-patch macro Dice subject to negative-patch any-prediction rate <= 0.05",
+  "test_accessed": false,
+  "smoke": false
+}
