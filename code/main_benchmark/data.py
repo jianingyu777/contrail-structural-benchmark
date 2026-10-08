@@ -3,6 +3,8 @@
 import csv
 from pathlib import Path
 
+CLASS_MAP = {"positive": "positive", "difficult_negative": "negative"}
+
 
 def rows_for_split(records, data_root, split):
     rows = []
@@ -14,7 +16,7 @@ def rows_for_split(records, data_root, split):
             "sample_key": Path(record["image_8bit_path"]).name,
             "scene_key": record["scene_id"],
             "observation_date": record["acquisition_date"],
-            "positive_negative": record["sample_class"],
+            "positive_negative": CLASS_MAP[record["sample_class"]],
             "image8_path": str(data_root / record["image_8bit_path"]),
             "label_path": str(data_root / record["mask_path"]),
         })

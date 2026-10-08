@@ -2,13 +2,28 @@
 
 import csv
 import json
+import sys
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "code"))
+from main_benchmark.data import check_partition, load_records, rows_for_split
 
 
 class MainBenchmarkReleaseTest(unittest.TestCase):
+    def test_released_manifest_partition_classes(self):
+        records = load_records(ROOT / "metadata/records.csv")
+        for split, expected in (("train", (6243, 6970)), ("validation", (1358, 1762)), ("test", (1422, 1700))):
+            with self.subTest(split=split):
+                rows = rows_for_split(records, Path("DATA_ROOT"), split)
+                check_partition(rows, split)
+                self.assertEqual(
+                    (sum(row["positive_negative"] == "positive" for row in rows),
+                     sum(row["positive_negative"] == "negative" for row in rows)),
+                    expected,
+                )
+
     def test_twelve_frozen_decisions_match_metrics(self):
         with (ROOT / "results/main_benchmark/metrics/per_seed.csv").open(newline="", encoding="utf-8-sig") as handle:
             results = list(csv.DictReader(handle))
