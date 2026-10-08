@@ -37,14 +37,18 @@ and date-clustered uncertainty estimates. The three smaller architectures use
 | SegFormer-B0 | `smp.Segformer` | `mit_b0` |
 | MaxViT-B-U-Net | `timm` encoder and U-Net-like decoder | `maxvit_base_tf_512.in21k_ft_in1k` |
 
-**Experiment 1: four-model benchmark (Sects. 5.1–5.4).** All four models use
+**Experiment 1: four-model benchmark (Sects. 5.1-5.4).** All four models use
 enhanced RGB and seeds 42, 123 and 2025 under the matched training protocol.
 See [main benchmark instructions](docs/MAIN_BENCHMARK.md) and
-[archived results](results/main_benchmark/).
+[archived results](results/main_benchmark/). Use
+`requirements-main-benchmark.txt` (`timm==1.0.27`, as recorded by the
+[archived protocol lock](results/main_benchmark/run_configs/PROTOCOL_LOCK.json)).
 
 **Experiment 2: RGB vs uint16 comparison (Sect. 5.5).** U-Net uses seeds
 3407, 3408 and 3409 in each input representation. This is a separate protocol;
 its normalization statistics are estimated from the training partition only.
+The legacy [protocol](docs/PROTOCOL.md) and [running guide](docs/RUNNING.md)
+describe this experiment and use `requirements-ml.txt` (`timm==1.0.15`).
 
 ## Quick Start
 
@@ -52,7 +56,7 @@ Use Python 3.10 for training and inference. Install the PyTorch 2.5.1 and
 torchvision 0.20.1 builds appropriate for your CPU or CUDA system, followed by:
 
 ```sh
-python -m pip install -r requirements-ml.txt
+python -m pip install -r requirements-main-benchmark.txt
 python code/verify_dataset.py --data-root /path/to/ContrailStruct30 --check-files
 python code/read_example.py --data-root /path/to/ContrailStruct30
 python code/train_main_benchmark.py --model UNET_RESNET34 --seed 42 --data-root /path/to/ContrailStruct30
@@ -61,7 +65,8 @@ python code/train_main_benchmark.py --model UNET_RESNET34 --seed 42 --data-root 
 For CPU-only data and statistics checks, a separately tested Python 3.14
 environment is specified in `requirements-data.txt`. Installation, all three
 model commands, the six-run representation experiment, and inference examples
-are in [Running the experiments](docs/RUNNING.md).
+for Experiment 2 are in [its running guide](docs/RUNNING.md). Use
+[MAIN_BENCHMARK.md](docs/MAIN_BENCHMARK.md) for Experiment 1 commands.
 
 ## Reference Results
 
@@ -86,7 +91,8 @@ predicted foreground. Test-date intervals and training-seed variation are distin
 
 - [Image enhancement](enhancement/README.md): patch-local transform, fixed parameters and three real executable examples.
 - [Data dictionary](metadata/DATA_DICTIONARY.md): actual fields, types, units and path conventions.
-- [Evaluation protocol](docs/PROTOCOL.md): loss, augmentation, checkpoint and threshold selection, metrics and bootstrap.
+- [Four-model protocol](docs/MAIN_BENCHMARK.md): matched training, validation selection and test evaluation (Experiment 1).
+- [Legacy protocol](docs/PROTOCOL.md): RGB-uint16 comparison and older three-model reference (Experiment 2).
 - [Contextual reassessment](review/README.md): recorded decisions for 100 patches and source-window metadata.
 - [Main benchmark](results/main_benchmark/): 12 archived configurations, validation decisions and statistics.
 - [Representation comparison](results/): eight older-protocol runs, including six U-Net representation runs.

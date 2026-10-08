@@ -1,4 +1,9 @@
-# Running the experiments
+# Running Experiment 2
+
+This guide covers the RGB-uint16 comparison and earlier three-model reference
+runs. For the matched four-model main benchmark in Sects. 5.1-5.4, use
+[MAIN_BENCHMARK.md](MAIN_BENCHMARK.md) and
+`requirements-main-benchmark.txt`.
 
 Run commands from the repository root. Replace `/path/to/ContrailStruct30`
 with the folder containing the three data partitions. On Windows, quote paths

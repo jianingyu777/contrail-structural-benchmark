@@ -1,4 +1,8 @@
-# Evaluation protocol
+# Evaluation protocol (Experiment 2)
+
+This document describes the RGB-uint16 comparison and earlier three-model
+reference runs, not the matched four-model main benchmark in Sects. 5.1-5.4.
+For that experiment see [MAIN_BENCHMARK.md](MAIN_BENCHMARK.md).
 
 ## Reference data
 

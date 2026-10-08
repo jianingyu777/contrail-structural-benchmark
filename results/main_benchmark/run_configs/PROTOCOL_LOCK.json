@@ -1,0 +1,158 @@
+{
+  "protocol_id": "P1_20260916_MAXVIT_MATCHED_BASELINES_V1",
+  "created_unix": 1789539844.135331,
+  "models": [
+    "UNET_RESNET34",
+    "DEEPLABV3PLUS_RESNET50",
+    "SEGFORMER_B0"
+  ],
+  "seeds": [
+    42,
+    123,
+    2025
+  ],
+  "reference": {
+    "42": {
+      "run_config_sha256": "ffe6a1623676642115284f53d9af28d500734d16764244f2f50d2453b0965e33",
+      "checkpoint_sha256": "5b8e9e869fcece6975c2f80a2d23841eecf9949bf37f4a99a05d15f73b30ac32",
+      "matched_fields": {
+        "input": "RENDERED3",
+        "input_channels": 3,
+        "input_size": 256,
+        "train_rows": 13213,
+        "validation_rows": 3120,
+        "epochs_max": 24,
+        "patience": 6,
+        "batch_size": 12,
+        "eval_batch_size": 12,
+        "optimizer": {
+          "name": "AdamW",
+          "lr": 0.0002,
+          "weight_decay": 0.0001
+        },
+        "loss": "BCEWithLogits + soft Dice",
+        "augmentation": "identical horizontal and vertical flips for every input setting",
+        "threshold": "validation positive-patch macro Dice subject to negative-patch any-prediction rate <= 0.05"
+      }
+    },
+    "123": {
+      "run_config_sha256": "c755b2476dd5eec831402a5f59479c894276019600b71c7eec5634c8450d78f8",
+      "checkpoint_sha256": "be42ac783611026bca022e88aa4b9ffd630352f5ebe7adbcc44c7fb5033ac14b",
+      "matched_fields": {
+        "input": "RENDERED3",
+        "input_channels": 3,
+        "input_size": 256,
+        "train_rows": 13213,
+        "validation_rows": 3120,
+        "epochs_max": 24,
+        "patience": 6,
+        "batch_size": 12,
+        "eval_batch_size": 12,
+        "optimizer": {
+          "name": "AdamW",
+          "lr": 0.0002,
+          "weight_decay": 0.0001
+        },
+        "loss": "BCEWithLogits + soft Dice",
+        "augmentation": "identical horizontal and vertical flips for every input setting",
+        "threshold": "validation positive-patch macro Dice subject to negative-patch any-prediction rate <= 0.05"
+      }
+    },
+    "2025": {
+      "run_config_sha256": "59d5438847aae2b07205bb7a35d5a1ea7fd7232f472fa0d801daec72a05c6ed0",
+      "checkpoint_sha256": "2e20c15caace1e6356deffdb1e763f5b3c40d54618f8561005daa9b3b4135ace",
+      "matched_fields": {
+        "input": "RENDERED3",
+        "input_channels": 3,
+        "input_size": 256,
+        "train_rows": 13213,
+        "validation_rows": 3120,
+        "epochs_max": 24,
+        "patience": 6,
+        "batch_size": 12,
+        "eval_batch_size": 12,
+        "optimizer": {
+          "name": "AdamW",
+          "lr": 0.0002,
+          "weight_decay": 0.0001
+        },
+        "loss": "BCEWithLogits + soft Dice",
+        "augmentation": "identical horizontal and vertical flips for every input setting",
+        "threshold": "validation positive-patch macro Dice subject to negative-patch any-prediction rate <= 0.05"
+      }
+    }
+  },
+  "initialization": {
+    "resnet34": {
+      "smp_pretrained_settings": {
+        "repo_id": "smp-hub/resnet34.imagenet",
+        "revision": "7a57b34f723329ff020b3f8bc41771163c519d0c"
+      },
+      "sha256": "6b4d04c7d050eb2f35d38c6dda1f51afc5672d1dc0b3abb13f1c1514780a1352",
+      "tensor_count": 216,
+      "pretraining": "ImageNet-1K"
+    },
+    "resnet50": {
+      "smp_pretrained_settings": {
+        "repo_id": "smp-hub/resnet50.imagenet",
+        "revision": "00cb74e366966d59cd9a35af57e618af9f88efe9"
+      },
+      "sha256": "734b946b8a7da84a1d861cf03034f6a1b40431ba362ddb82baa56fe391d88925",
+      "tensor_count": 318,
+      "pretraining": "ImageNet-1K"
+    },
+    "mit_b0": {
+      "smp_pretrained_settings": {
+        "repo_id": "smp-hub/mit_b0.imagenet",
+        "revision": "9ce53d104d92d75aabb00aae70677aaab67e7c84"
+      },
+      "sha256": "6947de27b00bc5b704d43b76a99a669669d59493416391807a010e0b64d979a9",
+      "tensor_count": 176,
+      "pretraining": "ImageNet-1K"
+    }
+  },
+  "development_manifest_sha256": {
+    "train": "6305331358cad162ca79ecda11cad0c73664987b1e9de241d65e442b0b26c513",
+    "validation": "252a7da179b30efadcb12eb3c962e776da4fd2c73b4eecc14fc8686d8d172fbc"
+  },
+  "code_sha256": {
+    "code_snapshot/587_train_rgfa_v2_public_baselines.py": "34173794202437372e55405d0f0f0542ed30e1a53b692767c5e5232339a50fc0",
+    "code_snapshot/run_20260916_matched_baselines.py": "b66700b802cac64a096b63662e66ed7afeb5b5635a93e550a37ae2a01636548c",
+    "code_snapshot/544_fit_tgrs_geo_fusion_and_spr_v1.py": "61bd3df03ee0a026fd97099862fe8d7c2539277e9ba8270dca7d925c065f9a24",
+    "code_snapshot/fair_20260916_models.py": "ff9f41e059bad427e05dddf29165e33a57a3267c62837889a75dd8495bdf12e7",
+    "code_snapshot/546_evaluate_tgrs_geo_core_test_v1.py": "11463ed8bd4c338ee4f45783e4ceb2e317540e9a921d2be7f32510b743630a93",
+    "code_snapshot/542_train_tgrs_geo_standard_baseline_v1.py": "0afd2280fd329d101c976fa90bdd33fd4661ab80fc45a21b74bf4623de8f8be6"
+  },
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "segmentation-models-pytorch": "0.5.0",
+    "timm": "1.0.27",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-image": "0.25.2",
+    "safetensors": "0.7.0"
+  },
+  "evaluation": {
+    "primary": "positive_patch_macro_dice",
+    "threshold": "original validation-only MaxViT sweep with documented infeasible-constraint fallback",
+    "scene_bootstrap": 5000,
+    "date_bootstrap": 2000,
+    "bootstrap_seed": 20260916,
+    "test_state": "previously opened historical test; not a fresh blind test",
+    "test_evaluation_starts_after": "all nine new training runs and validation decisions complete"
+  },
+  "fairness_limits": [
+    "Architecture and parameter counts differ.",
+    "MaxViT uses ImageNet-21K then ImageNet-1K pretraining; new encoders use ImageNet-1K.",
+    "Same epoch cap and early-stopping rule, not identical GPU-hours or a per-model hyperparameter search."
+  ],
+  "test_read_during_prepare": false,
+  "prelaunch_revision": {
+    "unix": 1789540270.338464,
+    "previous_lock_sha256": "e99c8787f117a27790bb415764b863f01beda6bc05a04733bee5cb0f499770bc",
+    "reason": "SegFormer SMP encoder override rejects strict keyword; use base Module strict loading of encoder-only state.",
+    "formal_training_started": false,
+    "training_protocol_changed": false
+  }
+}

@@ -17,7 +17,10 @@ pretraining followed by ImageNet-1K fine-tuning, and the U-Net-like decoder in
 256 x 256 input. All parameters are fine-tuned.
 
 Use Python 3.10, PyTorch 2.5.1, torchvision 0.20.1, SMP 0.5.0 and timm
-1.0.15. Install `requirements-ml.txt` after selecting the appropriate
+1.0.27, as recorded by the archived
+[`PROTOCOL_LOCK.json`](../results/main_benchmark/run_configs/PROTOCOL_LOCK.json).
+Install
+`requirements-main-benchmark.txt` after selecting the appropriate
 PyTorch CUDA build. First use of pretrained models may download weights.
 The archived SMP runs loaded encoder-only weights from frozen safetensors;
 the public rerun resolves the same named upstream ImageNet initializations.
