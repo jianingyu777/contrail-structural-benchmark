@@ -1,0 +1,22 @@
+{
+  "protocol_id": "P1_20260911_SCENE_SPLIT_RETRAIN_V1",
+  "model": "MAXVIT_BASE_UNET",
+  "input": "RENDERED3",
+  "seed": 42,
+  "best_epoch": 6,
+  "best_validation_loss": 0.706093172270518,
+  "selected_threshold": 0.34,
+  "selected_validation": {
+    "threshold": 0.34,
+    "validation_positive_patch_macro_dice": 0.7789339733439608,
+    "validation_negative_patch_any_prediction_rate": 0.4035187287173666,
+    "constraint_neg_any_le_0_05": false,
+    "positive_validation_patches": 1358,
+    "negative_validation_patches": 1762,
+    "selected": true,
+    "selection_fallback_no_threshold_met_fpr_constraint": true
+  },
+  "checkpoint_sha256": "5b8e9e869fcece6975c2f80a2d23841eecf9949bf37f4a99a05d15f73b30ac32",
+  "validation_sweep_sha256": "23ab47df944b04b1acc9c87c043e55d5d16c2f63c891d0c90110f9aa9b623ac4",
+  "test_accessed": false
+}

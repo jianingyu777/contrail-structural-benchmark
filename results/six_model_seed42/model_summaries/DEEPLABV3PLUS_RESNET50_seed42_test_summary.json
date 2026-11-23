@@ -1,0 +1,22 @@
+{
+  "model": "DEEPLABV3PLUS_RESNET50",
+  "seed": 42,
+  "threshold": 0.24,
+  "pixel_auprc_4096bin": 0.872891510497254,
+  "seconds": 24.314783854410052,
+  "positive_patch_macro_dice": 0.7792854624616926,
+  "positive_patch_macro_iou": 0.6817528624373461,
+  "cldice": 0.8355123774100214,
+  "centerline_recall": 0.8781494721499821,
+  "pixel_pooled_dice": 0.8044256143051524,
+  "pixel_pooled_iou": 0.6728361061680271,
+  "precision": 0.7583020739931132,
+  "recall": 0.8565234458104978,
+  "negative_patch_any_prediction_rate": 0.4923529411764706,
+  "negative_pixel_fpr": 0.005172388413373162,
+  "rows": 3122,
+  "positive_rows": 1422,
+  "negative_rows": 1700,
+  "scenes": 120,
+  "dates": 51
+}

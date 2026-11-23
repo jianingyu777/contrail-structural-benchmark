@@ -1,0 +1,22 @@
+{
+  "model": "FCN_RESNET50",
+  "seed": 42,
+  "threshold": 0.53,
+  "pixel_auprc_4096bin": 0.8204162588547842,
+  "seconds": 19.580942003056407,
+  "positive_patch_macro_dice": 0.7069816163692978,
+  "positive_patch_macro_iou": 0.6201763085946133,
+  "cldice": 0.7674983965726739,
+  "centerline_recall": 0.7692435563499964,
+  "pixel_pooled_dice": 0.8092822169390012,
+  "pixel_pooled_iou": 0.6796591337189618,
+  "precision": 0.8331877983078296,
+  "recall": 0.7867101584607525,
+  "negative_patch_any_prediction_rate": 0.039411764705882354,
+  "negative_pixel_fpr": 0.001932220458984375,
+  "rows": 3122,
+  "positive_rows": 1422,
+  "negative_rows": 1700,
+  "scenes": 120,
+  "dates": 51
+}

@@ -1,0 +1,22 @@
+{
+  "model": "MAXVIT_BASE_UNET",
+  "seed": 42,
+  "threshold": 0.34,
+  "pixel_auprc_4096bin": 0.904300448453362,
+  "seconds": 40.246829783543944,
+  "positive_patch_macro_dice": 0.8202208491979655,
+  "positive_patch_macro_iou": 0.7362618013427404,
+  "cldice": 0.8754993214309045,
+  "centerline_recall": 0.9048472774479736,
+  "pixel_pooled_dice": 0.8502054554992131,
+  "pixel_pooled_iou": 0.739441198051911,
+  "precision": 0.841733687576964,
+  "recall": 0.8588494882280868,
+  "negative_patch_any_prediction_rate": 0.26588235294117646,
+  "negative_pixel_fpr": 0.002541791130514706,
+  "rows": 3122,
+  "positive_rows": 1422,
+  "negative_rows": 1700,
+  "scenes": 120,
+  "dates": 51
+}

@@ -1,0 +1,22 @@
+{
+  "protocol_id": "P1_20260916_MAXVIT_MATCHED_BASELINES_V1",
+  "model": "DEEPLABV3PLUS_RESNET50",
+  "input": "RENDERED3",
+  "seed": 42,
+  "best_epoch": 22,
+  "best_validation_loss": 0.7594571264603963,
+  "selected_threshold": 0.24,
+  "selected_validation": {
+    "threshold": 0.24,
+    "validation_positive_patch_macro_dice": 0.7137401719671449,
+    "validation_negative_patch_any_prediction_rate": 0.5221339387060159,
+    "constraint_neg_any_le_0_05": false,
+    "positive_validation_patches": 1358,
+    "negative_validation_patches": 1762,
+    "selected": true,
+    "selection_fallback_no_threshold_met_fpr_constraint": true
+  },
+  "checkpoint_sha256": "708ed0e13d70732c9dec2c3916cf8c76934f1dd57a5e66fbbbba1f8f9a9fada8",
+  "validation_sweep_sha256": "f5d5e39b40506154a00cce0d352b1d7b0791709477fdc67fbd7f2946785814f3",
+  "test_accessed": false
+}

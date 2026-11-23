@@ -44,13 +44,16 @@ Dice subject to empty-patch activation no greater than 5%, with the
 pre-specified maximum-Dice fallback when the constraint is not met. Test
 outputs are written only after the threshold is frozen.
 
-The exact thresholds and per-patch records for the archived six-model run are
-in the project audit record `recovery_19455/COMPARISON_AUDIT_20261120.md`.
-The transcribed aggregate values are in
-[`results/six_model_seed42/table6_metrics.csv`](../results/six_model_seed42/table6_metrics.csv),
-with checkpoint SHA-256 hashes in
-[`checkpoint_manifest.csv`](../results/six_model_seed42/checkpoint_manifest.csv).
-Binary weights are distributed separately and are not stored in Git.
+The exact thresholds are in
+[`Table6_exact_thresholds.csv`](../results/six_model_seed42/Table6_exact_thresholds.csv):
+FCN 0.53, U-Net 0.30, DeepLabV3+ 0.24, PSPNet 0.26, SegFormer 0.30 and
+MaxViT 0.34. The full 18,732-row per-patch audit is
+[`Table6_full_per_patch_audit_all_models_seed42.csv`](../results/six_model_seed42/Table6_full_per_patch_audit_all_models_seed42.csv),
+and the complete aggregate table is
+[`Table6_seed42_aggregate_results.csv`](../results/six_model_seed42/Table6_seed42_aggregate_results.csv).
+Checkpoint SHA-256 hashes are in
+[`checkpoint_manifest.csv`](../results/six_model_seed42/checkpoint_manifest.csv);
+binary weights are distributed separately and are not stored in Git.
 
 ## Table 6 values
 

@@ -1,0 +1,22 @@
+{
+  "model": "PSPNET_RESNET50",
+  "seed": 42,
+  "threshold": 0.26,
+  "pixel_auprc_4096bin": 0.8321287731127219,
+  "seconds": 16.690648810938,
+  "positive_patch_macro_dice": 0.6894333023412931,
+  "positive_patch_macro_iou": 0.5867660146614035,
+  "cldice": 0.7669374066691041,
+  "centerline_recall": 0.7813486005111597,
+  "pixel_pooled_dice": 0.7989170944422124,
+  "pixel_pooled_iou": 0.6651639872196767,
+  "precision": 0.794123710135443,
+  "recall": 0.8037686965378099,
+  "negative_patch_any_prediction_rate": 0.05588235294117647,
+  "negative_pixel_fpr": 0.001131744384765625,
+  "rows": 3122,
+  "positive_rows": 1422,
+  "negative_rows": 1700,
+  "scenes": 120,
+  "dates": 51
+}

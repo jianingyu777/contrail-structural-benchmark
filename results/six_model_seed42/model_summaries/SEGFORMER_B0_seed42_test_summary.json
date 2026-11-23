@@ -1,0 +1,22 @@
+{
+  "model": "SEGFORMER_B0",
+  "seed": 42,
+  "threshold": 0.3,
+  "pixel_auprc_4096bin": 0.886011854138672,
+  "seconds": 23.11390965245664,
+  "positive_patch_macro_dice": 0.7851165203144981,
+  "positive_patch_macro_iou": 0.6880151451070273,
+  "cldice": 0.8474874356957302,
+  "centerline_recall": 0.8822045890251886,
+  "pixel_pooled_dice": 0.8119893727782516,
+  "pixel_pooled_iou": 0.6834866239177921,
+  "precision": 0.7613180692146861,
+  "recall": 0.8698867164194876,
+  "negative_patch_any_prediction_rate": 0.5641176470588235,
+  "negative_pixel_fpr": 0.005283876306870405,
+  "rows": 3122,
+  "positive_rows": 1422,
+  "negative_rows": 1700,
+  "scenes": 120,
+  "dates": 51
+}

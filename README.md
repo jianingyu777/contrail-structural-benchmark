@@ -49,10 +49,11 @@ Reference values:
 | FCN–ResNet50 | 0.7070 | 0.6202 | 0.6797 | 0.8332 | 0.7867 | 3.94% |
 | PSPNet–ResNet50 | 0.6894 | 0.5868 | 0.6652 | 0.7941 | 0.8038 | 5.59% |
 
-See [MAIN_BENCHMARK.md](docs/MAIN_BENCHMARK.md) for commands, threshold rules,
-checkpoint hashes and the Table 7 manual-mask evaluation. Result files are in
-[results/six_model_seed42/](results/six_model_seed42/). Binary weights are not
-bundled in Git; their SHA-256 hashes are recorded in the manifest.
+See [MAIN_BENCHMARK.md](docs/MAIN_BENCHMARK.md) for commands and the Table 7
+manual-mask evaluation. The exact validation-selected thresholds, 18,732-row
+per-patch audit, aggregate metrics, final Figure 7 and checkpoint SHA-256
+hashes are in [results/six_model_seed42/](results/six_model_seed42/). Binary
+weights are not bundled in Git.
 
 ## Archived experiments
 
