@@ -1,4 +1,4 @@
-# Experiment 1: matched four-model benchmark (archived protocol versions).
+# Current six-model benchmark (seed 42) and archived four-model experiment.
 # Select the CUDA-compatible PyTorch 2.5.1 / torchvision 0.20.1 wheels first.
 torch==2.5.1
 torchvision==0.20.1

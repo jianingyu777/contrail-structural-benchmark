@@ -1,7 +1,11 @@
+> **Archived protocol.** This RGB–uint16 protocol is retained for
+> provenance and is not the current Sect. 5 benchmark. See
+> `MAIN_BENCHMARK.md` for the current six-model experiment.
+
 # Evaluation protocol (Experiment 2)
 
 This document describes the RGB-uint16 comparison and earlier three-model
-reference runs, not the matched four-model main benchmark in Sects. 5.1-5.4.
+reference runs, not the current six-model benchmark in `MAIN_BENCHMARK.md`.
 For that experiment see [MAIN_BENCHMARK.md](MAIN_BENCHMARK.md).
 
 ## Reference data

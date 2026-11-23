@@ -1,7 +1,12 @@
-# Running Experiment 2
+> **Archived experiment guide.** This document covers the RGB–uint16
+> comparison and earlier three-model reference runs. It is retained for
+> provenance but is **not** the current Sect. 5 benchmark. For the current
+> six-model, seed-42 comparison, use [MAIN_BENCHMARK.md](MAIN_BENCHMARK.md).
 
-This guide covers the RGB-uint16 comparison and earlier three-model reference
-runs. For the matched four-model main benchmark in Sects. 5.1-5.4, use
+# Running the archived RGB–uint16 and three-model experiments
+
+This guide covers the RGB–uint16 comparison and earlier three-model reference
+runs. For the current six-model main benchmark, use
 [MAIN_BENCHMARK.md](MAIN_BENCHMARK.md) and
 `requirements-main-benchmark.txt`.
 

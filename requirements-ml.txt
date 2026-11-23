@@ -1,3 +1,4 @@
+# Archived RGB-uint16 and earlier three-model experiments.
 torch==2.5.1
 torchvision==0.20.1
 segmentation-models-pytorch==0.5.0
