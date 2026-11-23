@@ -25,13 +25,13 @@
     },
     {
       "path": "NOTICE.md",
-      "bytes": 1286,
-      "sha256": "51e18bbbf1bea4bd1d5b820cd3e30ed3c72656bf1005480df49264e2d58b735b"
+      "bytes": 1480,
+      "sha256": "d670e6de7a4f3fceec34079d80add8cf80057248cd95bc03933d079a2dc9b17b"
     },
     {
       "path": "README.md",
-      "bytes": 6296,
-      "sha256": "29f6a759c3217911221fd5d580d1bad14dafe9280b47925d4180e0cb9fb1de8d"
+      "bytes": 6515,
+      "sha256": "f0fe5730661cdcdabdc7549c023e1c0a215a77379fe2481402ea6b67d4a71cab"
     },
     {
       "path": "code/convert_uint16_to_8bit.py",

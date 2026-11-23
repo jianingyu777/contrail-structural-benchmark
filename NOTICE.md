@@ -11,14 +11,16 @@ The implementations depend on PyTorch (BSD-style), torchvision (BSD-style),
 timm (Apache-2.0), Albumentations 1.4.24 (MIT) and other packages identified in
 the environment files. The dependencies and ImageNet initialization weights
 retain their own licences and distribution conditions. The package does not
-relicense third-party software or source observations.
+relicense third-party software or original full-scene source observations.
 
-The dataset's enhanced images, binary masks and author-generated metadata use
-CC BY 4.0. SDGSAT-1 source-value TIFFs and full-scene/context material remain
-subject to the applicable source-data use and redistribution terms. The data
-portal is https://data.sdgsat.ac.cn/. Original full-scene files are not included
-in the compact reproducibility package; review context is linked by source
-product and pixel window.
+The dataset's enhanced images, binary masks, corresponding three-band uint16
+source-value TIFF patches, and author-generated metadata are released under
+CC BY 4.0. Permission to redistribute the derived 256 x 256 source-value
+patches was obtained from the SDGSAT-1 Open Science Program. The release does
+not include original full-scene observations; those remain subject to the
+applicable source-data terms and are not redistributed here. The data portal is
+https://data.sdgsat.ac.cn/. Review context is linked by source product and pixel
+window rather than by redistributing full scenes.
 
 Historical flight trajectories used in candidate search were accessed through
 ADSB.lol (https://adsb.lol/). The flight archive itself is not redistributed here.

@@ -117,6 +117,9 @@ Foundation of China (grant 62575297).
 ## Licence
 
 Author-developed code is licensed under [MIT](LICENSE). Enhanced images,
-masks and author-generated dataset metadata follow the dataset's CC BY 4.0
-terms. SDGSAT-1 source-value imagery follows the applicable source-data terms.
-Upstream software retains its own licences. See [NOTICE.md](NOTICE.md).
+binary masks, corresponding three-band uint16 source-value TIFF patches, and
+author-generated metadata are released under the dataset's CC BY 4.0 terms.
+Redistribution of the derived 256 x 256 source-value patches was authorized by
+the SDGSAT-1 Open Science Program. Original full-scene observations are not
+included and remain subject to the applicable source-data terms. Upstream
+software retains its own licences. See [NOTICE.md](NOTICE.md).
