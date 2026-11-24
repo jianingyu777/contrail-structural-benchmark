@@ -1,5 +1,5 @@
 {
-  "snapshot": "essd-20261123",
+  "snapshot": "essd-20261124",
   "algorithm": "SHA-256",
   "self_excluded": "code_file_manifest.json",
   "files": [
@@ -31,7 +31,7 @@
     {
       "path": "README.md",
       "bytes": 6549,
-      "sha256": "4b35914e50e178176261920c1a9ef682d246f0b8364e5979e6173f250a5d3fc9"
+      "sha256": "4be07e9baaf1772e16c0a45726ffe2c093d67c841e90f8b417511cc0c2d9a632"
     },
     {
       "path": "code/convert_uint16_to_8bit.py",
@@ -50,8 +50,8 @@
     },
     {
       "path": "code/evaluate_manual_mask_reference.py",
-      "bytes": 4375,
-      "sha256": "3b52de81075e74fc8cf5fb6486efd57ebcb0517eb6217c68643ab798b197eb12"
+      "bytes": 4749,
+      "sha256": "efea3a57e33094e9ea518f8007dc89288400dca4a015cc56c41a8d655a7592e5"
     },
     {
       "path": "code/main_benchmark/data.py",
@@ -135,8 +135,8 @@
     },
     {
       "path": "docs/MAIN_BENCHMARK.md",
-      "bytes": 5464,
-      "sha256": "359bbee93992d5c28183b1e9b3cb8d826e705faa9e777e87ddc620a21e204101"
+      "bytes": 6507,
+      "sha256": "e8dc9175ab69cd682831c9bb3b958f54da25575040bc5255dcefefe619f7cc47"
     },
     {
       "path": "docs/PROTOCOL.md",
@@ -855,8 +855,8 @@
     },
     {
       "path": "results/six_model_seed42/table7_manual_masks.csv",
-      "bytes": 445,
-      "sha256": "4eb8d1c5264737e5a5d01d96f90d9494e39deed9a4c723f9a86296f269a7972e"
+      "bytes": 450,
+      "sha256": "c7ed4aa93345a72b2ed36a6de10de6ddd05a3100a4896e5f5673125f1ab43e68"
     },
     {
       "path": "results/six_model_seed42/table7_thresholds.csv",
@@ -1042,6 +1042,16 @@
       "path": "verification.json",
       "bytes": 7559,
       "sha256": "4e011004bcb043e1525f59c6ed473d305261932083afa891c1ce45a3cef44e82"
+    },
+    {
+      "path": "results/six_model_seed42/table7_all60_metrics.csv",
+      "bytes": 590,
+      "sha256": "fe053d138cb16aa4a6c61b9d6ae8a8a8ceb38a49f095dd2c2ef80ab1b2ca0ad2"
+    },
+    {
+      "path": "results/six_model_seed42/table7_all60_leakage_audit.csv",
+      "bytes": 9214,
+      "sha256": "9578c1ac97e1da6a5cfd44c467cedf0ed24effad89442584c856264336484881"
     }
   ]
 }

@@ -1,9 +1,12 @@
-"""Evaluate six segmentation checkpoints against the 20 manual 512-pixel masks.
+"""Evaluate six segmentation checkpoints against the 60 manual 512-pixel masks.
 
 This reproduces the Table 7 reference-mask check: each 512 x 512 image is
-centre-cropped to the 256 x 256 input used by the checkpoints, RGB values are
-divided by 255, and each checkpoint uses its fixed validation-selected
-threshold. The script writes Dice, IoU, pixel AUPRC and empty-mask activation.
+centre-cropped to the 256 x 256 input used by the checkpoints and processed with
+the same per-patch enhancement as the dataset (not the whole-512 rendering), RGB
+values are divided by 255, and each checkpoint uses its fixed validation-selected
+threshold. Reference masks were drawn on the full 512 x 512 images and
+centre-cropped to the same 256 x 256 grid. The script writes Dice, IoU, pixel
+AUPRC and empty-mask activation.
 """
 
 import argparse
@@ -54,12 +57,16 @@ def main():
     with args.thresholds.open(newline="", encoding="utf-8-sig") as handle:
         thresholds = {r["model"]: float(r["threshold"]) for r in csv.DictReader(handle)}
 
-    ids = sorted(p.stem for p in args.image_dir.glob("EV*.png"))
+    ids = sorted(p.stem for p in args.image_dir.glob("*.png") if not p.stem.endswith(("_mask", "_valid", "_ignore")))
     images, masks = [], []
     for name in ids:
-        image = Image.open(args.image_dir / f"{name}.png").convert("RGB").crop((128, 128, 384, 384))
+        image = Image.open(args.image_dir / f"{name}.png").convert("RGB")
         mask_path = args.mask_dir / f"{name}_mask.png"
-        mask = Image.open(mask_path).convert("L").crop((128, 128, 384, 384))
+        mask = Image.open(mask_path).convert("L")
+        if image.size == (512, 512):
+            image = image.crop((128, 128, 384, 384))
+        if mask.size == (512, 512):
+            mask = mask.crop((128, 128, 384, 384))
         images.append(np.asarray(image, dtype=np.float32).transpose(2, 0, 1) / 255.0)
         masks.append(np.asarray(mask) > 127)
     images = torch.from_numpy(np.stack(images)).to(args.device)

@@ -106,7 +106,7 @@ are not part of this software repository.
 ## Citation and Acknowledgements
 
 Use [CITATION.cff](CITATION.cff) to cite this software, and cite the Figshare
-version used for your data. Code snapshot: `essd-20261120`.
+version used for your data. Code snapshot: `essd-20261124`.
 
 We acknowledge the SDGSAT-1 Open Science Program of the International Research
 Center of Big Data for Sustainable Development Goals. We thank

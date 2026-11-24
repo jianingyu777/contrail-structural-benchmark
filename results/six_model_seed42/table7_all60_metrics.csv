@@ -1,0 +1,7 @@
+﻿model,threshold,dice,iou,auprc,precision,recall,positive_patches,mean_positive_iou,negative_patches,negative_activation_count,negative_total
+ContrailMaxViTUNet,0.9,0.7498,0.5998,0.8164,0.8938,0.6458,47,0.6425,13,3,13
+FCN-ResNet50,0.85,0.7134,0.5545,0.7992,0.7802,0.6571,47,0.583,13,3,13
+SegFormer-B0,0.75,0.7012,0.5399,0.754,0.7167,0.6864,47,0.5516,13,8,13
+DeepLabV3+-ResNet50,0.75,0.6691,0.5028,0.723,0.6799,0.6587,47,0.5596,13,8,13
+PSPNet-ResNet50,0.85,0.6687,0.5023,0.7589,0.7476,0.6049,47,0.4767,13,3,13
+U-Net-ResNet34,0.8,0.6681,0.5016,0.6746,0.7294,0.6163,47,0.5489,13,8,13

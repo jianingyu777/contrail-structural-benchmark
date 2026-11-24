@@ -73,12 +73,28 @@ reference patches with any predicted foreground pixel.
 
 ## Table 7: manual reference-mask check
 
-Table 7 uses a **separate earlier archived checkpoint set** and 20 manually
-drawn 512 x 512 reference masks (15 positive, five empty). Each image is
-centre-cropped to 256 x 256, RGB values are divided by 255, and the archived
-validation-selected threshold is applied. Dice and IoU are pooled over
-evaluated pixels; AUPRC is pixel-level. This check is not directly comparable
-with the seed-42 Table 6 values.
+Table 7 uses a **separate earlier archived checkpoint set** and 60 manually
+drawn 512 x 512 reference masks (47 positive, 13 empty). Each image is
+centre-cropped to 256 x 256 and processed with the **same per-patch enhancement
+used for the dataset** (not the whole-512 rendering); RGB values are divided by
+255, and the archived validation-selected threshold is applied. Dice and IoU are pooled over
+evaluated pixels; AUPRC is pixel-level. Reference masks were drawn from scratch
+on the full 512 x 512 images and centre-cropped to the same 256 x 256 grid; their
+foreground extent can therefore differ from the dataset's own 256 masks. The
+central 256 crops overlap the archived checkpoints' training or validation pool
+(43 training, 17 validation, none in the held-out test partition), and the
+reference masks were drawn independently. This is therefore an in-domain
+annotation-reference check, not an unseen-image generalization test, and is not
+directly comparable with the seed-42 Table 6 values.
+
+| Model | Threshold | Dice | IoU | AUPRC | Negative activation |
+|---|---:|---:|---:|---:|---:|
+| MaxViT–U-Net | 0.90 | 0.750 | 0.600 | 0.816 | 3/13 |
+| FCN–ResNet50 | 0.85 | 0.713 | 0.555 | 0.799 | 3/13 |
+| SegFormer–B0 | 0.75 | 0.701 | 0.540 | 0.754 | 8/13 |
+| DeepLabV3+–ResNet50 | 0.75 | 0.669 | 0.503 | 0.723 | 8/13 |
+| PSPNet–ResNet50 | 0.85 | 0.669 | 0.502 | 0.759 | 3/13 |
+| U-Net–ResNet34 | 0.80 | 0.668 | 0.502 | 0.675 | 8/13 |
 
 ```sh
 python code/evaluate_manual_mask_reference.py \
