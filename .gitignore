@@ -7,7 +7,9 @@ venv/
 .env
 .env.*
 dataset/
-data/
+data/*
+!data/table7_manual_masks/
+!data/table7_manual_masks/**
 runs/
 outputs/
 evaluation/

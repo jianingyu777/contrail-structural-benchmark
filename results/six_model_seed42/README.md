@@ -42,13 +42,26 @@ four-model, three-seed table as the current benchmark.
 
 ## Table 7: manual reference-mask check
 
-- `table7_manual_masks.csv`: 20-image manual-mask results for the earlier
-  archived checkpoint set.
-- `table7_thresholds.csv`: thresholds used for that check.
+- `table7_manual_masks.csv`: 60-image manual-mask results for the earlier
+  archived checkpoint set (47 positive, 13 empty).
+- `table7_all60_metrics.csv`: full-precision all-60 metrics with negative
+  counts.
+- `table7_thresholds.csv`: fixed thresholds used for that check.
+- `table7_manual_rois.csv`: 60-row ROI inventory with record IDs, source
+  splits, foreground flags and mask SHA-256 values.
+- `table7_checkpoint_manifest.csv`: archived checkpoint filenames, byte sizes,
+  SHA-256, thresholds and architectures.
+- `table7_checkpoint_archive.json`: archive name, size and SHA-256 for the
+  separately distributed checkpoint archive.
 
-Table 7 uses an **earlier archived checkpoint set**, not the seed-42 weights
-in `checkpoint_manifest.csv`. It is retained as an annotation-dependent
-reference check and is not directly comparable with Table 6.
+The 60 reference, valid and ignore masks are in
+[`data/table7_manual_masks/`](../../data/table7_manual_masks/). Table 7 uses an
+**earlier archived checkpoint set**, not the seed-42 weights in
+`checkpoint_manifest.csv`; 43 of the 60 central crops are in its training split,
+17 in validation, and none in the held-out test split. It is an in-domain
+annotation-reference check and is not directly comparable with Table 6.
+See [`docs/TABLE7_REPRODUCTION.md`](../../docs/TABLE7_REPRODUCTION.md) for the
+full preparation and evaluation workflow.
 
 ## Provenance
 

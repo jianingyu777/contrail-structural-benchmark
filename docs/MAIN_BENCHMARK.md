@@ -96,17 +96,40 @@ directly comparable with the seed-42 Table 6 values.
 | PSPNet–ResNet50 | 0.85 | 0.669 | 0.502 | 0.759 | 3/13 |
 | U-Net–ResNet34 | 0.80 | 0.668 | 0.502 | 0.675 | 8/13 |
 
+The 60 reference masks, valid masks and ignore masks are included under
+[`data/table7_manual_masks/`](../data/table7_manual_masks/), with a 60-row
+inventory in
+[`table7_manual_rois.csv`](../results/six_model_seed42/table7_manual_rois.csv).
+The archived checkpoint archive is not stored in Git; its name, size and
+SHA-256 are recorded in
+[`table7_checkpoint_archive.json`](../results/six_model_seed42/table7_checkpoint_archive.json),
+and per-file hashes are in
+[`table7_checkpoint_manifest.csv`](../results/six_model_seed42/table7_checkpoint_manifest.csv).
+
+First build the 256 x 256 enhanced inputs from the public uint16 patches
+(centre crop plus the dataset's per-patch enhancement), then evaluate:
+
 ```sh
+python code/prepare_manual_mask_inputs.py \
+  --rois results/six_model_seed42/table7_manual_rois.csv \
+  --dataset-root PATH/TO/ContrailStruct30 \
+  --mask-root data/table7_manual_masks \
+  --output table7_inputs --verify-released-8bit
+
 python code/evaluate_manual_mask_reference.py \
   --weights-dir PATH/TO/ARCHIVED_WEIGHTS \
-  --image-dir PATH/TO/manual_mask/images \
-  --mask-dir PATH/TO/manual_mask/masks \
+  --image-dir table7_inputs/images \
+  --mask-dir table7_inputs/masks \
+  --valid-dir table7_inputs/valid \
+  --ignore-dir table7_inputs/ignore \
   --thresholds results/six_model_seed42/table7_thresholds.csv \
   --output results/six_model_seed42/table7_recomputed.csv
 ```
 
 The transcribed reference values are in
 [`table7_manual_masks.csv`](../results/six_model_seed42/table7_manual_masks.csv).
+Full step-by-step instructions and the checkpoint access note are in
+[`TABLE7_REPRODUCTION.md`](TABLE7_REPRODUCTION.md).
 
 ## Relationship to the archived experiments
 

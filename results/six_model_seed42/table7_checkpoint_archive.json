@@ -1,0 +1,14 @@
+{
+  "archive": "contrail_model_benchmark_checkpoints_20260831.zip",
+  "bytes": 727992049,
+  "sha256": "88eeae8c53270c22533bbf4f9c26ac2695ba09919f1a04ecde7c1d1e017e8cab",
+  "files": [
+    "contrail_maxvit_unet_fold5_best_iou.pth",
+    "fcn_resnet50_best.pth",
+    "unet_resnet34_best.pth",
+    "deeplabv3plus_resnet50_best.pth",
+    "pspnet_resnet50_best.pth",
+    "segformer_b0_best.pth"
+  ],
+  "note": "Binary weights are not stored in Git. The archive SHA-256 and per-file SHA-256 values allow verification of a copy obtained from the corresponding authors."
+}

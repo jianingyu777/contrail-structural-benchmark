@@ -55,6 +55,13 @@ per-patch audit, aggregate metrics, final Figure 7 and checkpoint SHA-256
 hashes are in [results/six_model_seed42/](results/six_model_seed42/). Binary
 weights are not bundled in Git.
 
+Table 7 uses 60 hand-annotated 512 x 512 ROIs. Their reference, valid and
+ignore masks are included in [data/table7_manual_masks/](data/table7_manual_masks/);
+the 60-row inventory and archived-checkpoint hashes are in
+[results/six_model_seed42/](results/six_model_seed42/). The complete
+preparation and evaluation workflow, including the per-patch enhancement step,
+is in [TABLE7_REPRODUCTION.md](docs/TABLE7_REPRODUCTION.md).
+
 ## Archived experiments
 
 The previous four-model, three-seed experiment and the RGB–uint16
@@ -92,6 +99,7 @@ commands and inference examples are in [docs/RUNNING.md](docs/RUNNING.md).
 - [Image enhancement](enhancement/README.md): patch-local transform, fixed parameters and three real executable examples.
 - [Data dictionary](metadata/DATA_DICTIONARY.md): actual fields, types, units and path conventions.
 - [Current six-model protocol](docs/MAIN_BENCHMARK.md): training, validation selection, test evaluation and Table 7.
+- [Table 7 reproduction](docs/TABLE7_REPRODUCTION.md): 60-image manual-mask inputs, per-patch enhancement, archived checkpoints and expected values.
 - [Archived four-model protocol](docs/ARCHIVED_FOUR_MODEL.md): previous three-seed experiment.
 - [Legacy RGB–uint16 protocol](docs/PROTOCOL.md): archived representation comparison.
 - [Contextual reassessment](review/README.md): recorded decisions for 100 patches and source-window metadata.
